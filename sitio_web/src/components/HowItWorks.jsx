@@ -9,10 +9,10 @@ export default function HowItWorks() {
   const [activeTab, setActiveTab] = useState('whatsapp');
 
   const tabs = [
-    { id: 'whatsapp', label: 'WhatsApp a Planilla', icon: MessageCircle },
-    { id: 'rag', label: 'RAG — Chat sobre PDFs', icon: FileText },
-    { id: 'erp', label: 'Conexión a ERP / SQL', icon: Database },
-    { id: 'ocr', label: 'Procesamiento OCR', icon: Cpu },
+    { id: 'whatsapp', label: 'Asistente de WhatsApp', icon: MessageCircle },
+    { id: 'rag', label: 'Chat con Base de Conocimientos', icon: FileText },
+    { id: 'erp', label: 'Asistente de Reportes y Datos', icon: Database },
+    { id: 'ocr', label: 'Lectura Automática de Documentos', icon: Cpu },
   ];
 
   const handleSimulatorComplete = () => {
@@ -63,8 +63,8 @@ export default function HowItWorks() {
       additionalBadges: ['Facturación automática', 'Seguimiento de presupuestos', 'Control de stock e inventario', 'Consolidación de reportes']
     },
     rag: {
-      badge: 'DEMO EN VIVO: CONSULTAS SEMÁNTICAS (RAG)',
-      analogyTitle: '¿Qué es RAG y cómo te sirve?',
+      badge: 'DEMO EN VIVO: CHAT CON BASE DE CONOCIMIENTOS',
+      analogyTitle: '¿Qué es y cómo te sirve?',
       analogyText: '<strong>Es como un ChatGPT que solo sabe de tu empresa</strong>. Al subir tus catálogos, listas de precios o manuales de políticas a la base de conocimiento de la IA, tus vendedores o clientes pueden hacerle preguntas complejas en lenguaje natural y obtener respuestas exactas al instante.',
       benefits: [
         {
@@ -88,7 +88,7 @@ export default function HowItWorks() {
       additionalBadges: ['Catálogos de productos', 'Listas de precios mayoristas', 'Fichas técnicas y manuales', 'Políticas de cambios y garantía']
     },
     erp: {
-      badge: 'DEMO EN VIVO: ANALÍTICA CONECTADA AL ERP',
+      badge: 'DEMO EN VIVO: ASISTENTE DE REPORTES Y DATOS',
       analogyTitle: '¿Cómo ayuda a la toma de decisiones?',
       analogyText: '<strong>Convierte tus datos fríos en respuestas directas</strong>. La IA se conecta de forma segura a tu sistema de gestión o base de datos SQL y te permite consultar ventas, stock o márgenes en lenguaje natural desde Slack, Teams o un portal web.',
       benefits: [
@@ -113,7 +113,7 @@ export default function HowItWorks() {
       additionalBadges: ['Tango Gestión / SAP B1', 'Bases de Datos SQL Server', 'PostgreSQL / MySQL', 'Sistemas de Facturación Propios']
     },
     ocr: {
-      badge: 'DEMO EN VIVO: ESCÁNER DE COMPROBANTES (OCR)',
+      badge: 'DEMO EN VIVO: LECTURA AUTOMÁTICA DE COMPROBANTES',
       analogyTitle: '¿Cómo optimiza la administración?',
       analogyText: '<strong>La IA lee y concilia tus comprobantes de pago</strong>. Cuando tus clientes te envían un ticket, foto o PDF de transferencia, la IA lee los datos clave (CUIT, monto, CBU) y los concilia de forma automática contra tus facturas pendientes.',
       benefits: [
