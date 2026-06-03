@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/webia/',
+  base: '/impulso-ia/',
   plugins: [react(), tailwindcss()],
   server: {
     allowedHosts: true,
