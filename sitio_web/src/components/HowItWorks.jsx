@@ -15,6 +15,27 @@ export default function HowItWorks() {
     { id: 'ocr', label: 'Procesamiento OCR', icon: Cpu },
   ];
 
+  const handleSimulatorComplete = () => {
+    const currentIndex = tabs.findIndex(tab => tab.id === activeTab);
+    const nextIndex = (currentIndex + 1) % tabs.length;
+    setActiveTab(tabs[nextIndex].id);
+  };
+
+  const getSimulator = (tabId) => {
+    switch (tabId) {
+      case 'whatsapp':
+        return <WhatsAppSimulator onComplete={handleSimulatorComplete} />;
+      case 'rag':
+        return <RAGSimulator onComplete={handleSimulatorComplete} />;
+      case 'erp':
+        return <ERPSimulator onComplete={handleSimulatorComplete} />;
+      case 'ocr':
+        return <DocProcessingSimulator onComplete={handleSimulatorComplete} />;
+      default:
+        return null;
+    }
+  };
+
   const useCasesData = {
     whatsapp: {
       badge: 'CASO DE EJEMPLO: AUTOMATIZACIÓN DE VENTAS',
@@ -39,8 +60,7 @@ export default function HowItWorks() {
         }
       ],
       additionalBadgeTitle: 'Otros Procesos que Automatizamos:',
-      additionalBadges: ['Facturación automática', 'Seguimiento de presupuestos', 'Control de stock e inventario', 'Consolidación de reportes'],
-      simulator: <WhatsAppSimulator />
+      additionalBadges: ['Facturación automática', 'Seguimiento de presupuestos', 'Control de stock e inventario', 'Consolidación de reportes']
     },
     rag: {
       badge: 'DEMO EN VIVO: CONSULTAS SEMÁNTICAS (RAG)',
@@ -65,8 +85,7 @@ export default function HowItWorks() {
         }
       ],
       additionalBadgeTitle: 'Qué Documentos puedes subir:',
-      additionalBadges: ['Catálogos de productos', 'Listas de precios mayoristas', 'Fichas técnicas y manuales', 'Políticas de cambios y garantía'],
-      simulator: <RAGSimulator />
+      additionalBadges: ['Catálogos de productos', 'Listas de precios mayoristas', 'Fichas técnicas y manuales', 'Políticas de cambios y garantía']
     },
     erp: {
       badge: 'DEMO EN VIVO: ANALÍTICA CONECTADA AL ERP',
@@ -91,8 +110,7 @@ export default function HowItWorks() {
         }
       ],
       additionalBadgeTitle: 'Sistemas que Integramos:',
-      additionalBadges: ['Tango Gestión / SAP B1', 'Bases de Datos SQL Server', 'PostgreSQL / MySQL', 'Sistemas de Facturación Propios'],
-      simulator: <ERPSimulator />
+      additionalBadges: ['Tango Gestión / SAP B1', 'Bases de Datos SQL Server', 'PostgreSQL / MySQL', 'Sistemas de Facturación Propios']
     },
     ocr: {
       badge: 'DEMO EN VIVO: ESCÁNER DE COMPROBANTES (OCR)',
@@ -117,8 +135,7 @@ export default function HowItWorks() {
         }
       ],
       additionalBadgeTitle: 'Formatos Soportados:',
-      additionalBadges: ['PDFs de Transferencias', 'Capturas de Pantalla (celular)', 'Fotos de Tickets de Pago', 'Mails de aviso de depósitos'],
-      simulator: <DocProcessingSimulator />
+      additionalBadges: ['PDFs de Transferencias', 'Capturas de Pantalla (celular)', 'Fotos de Tickets de Pago', 'Mails de aviso de depósitos']
     }
   };
 
@@ -182,7 +199,7 @@ export default function HowItWorks() {
             
             {/* Dynamic simulator rendering stretching to full width */}
             <div className="relative w-full">
-              {currentData.simulator}
+              {getSimulator(activeTab)}
             </div>
           </div>
 

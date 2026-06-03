@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Check, CheckCheck, Send, FileSpreadsheet } from 'lucide-react';
 
-export default function WhatsAppSimulator() {
+export default function WhatsAppSimulator({ onComplete }) {
   const [messages, setMessages] = useState([]);
   const [isTyping, setIsTyping] = useState(false);
   const [sheetData, setSheetData] = useState([
@@ -53,15 +53,19 @@ export default function WhatsAppSimulator() {
     
     const runScriptStep = (stepIndex) => {
       if (stepIndex >= script.length) {
-        // Conversation finished: Hold for 7 seconds, then reset
+        // Conversation finished: Hold for 7 seconds, then reset or transition
         timer = setTimeout(() => {
-          setMessages([]);
-          setSheetData([
-            { date: '26/05', client: 'Marta Gómez', phone: '11-3344-5566', desc: '1 Pintura', shift: 'Tarde', amount: '$60.000', status: 'Cargado' },
-            { date: '26/05', client: 'Pedro Ruiz', phone: '11-9988-7766', desc: '2 Eléctricos', shift: 'Mañana', amount: '$80.000', status: 'Cargado' },
-          ]);
-          setHighlightRow(false);
-          setCurrentStep(0);
+          if (onComplete) {
+            onComplete();
+          } else {
+            setMessages([]);
+            setSheetData([
+              { date: '26/05', client: 'Marta Gómez', phone: '11-3344-5566', desc: '1 Pintura', shift: 'Tarde', amount: '$60.000', status: 'Cargado' },
+              { date: '26/05', client: 'Pedro Ruiz', phone: '11-9988-7766', desc: '2 Eléctricos', shift: 'Mañana', amount: '$80.000', status: 'Cargado' },
+            ]);
+            setHighlightRow(false);
+            setCurrentStep(0);
+          }
         }, 7000);
         return;
       }

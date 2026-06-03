@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Database, Send, BarChart2, Hash, Terminal } from 'lucide-react';
 
-export default function ERPSimulator() {
+export default function ERPSimulator({ onComplete }) {
   const [messages, setMessages] = useState([]);
   const [isTyping, setIsTyping] = useState(false);
   const [currentStep, setCurrentStep] = useState(0);
@@ -53,10 +53,14 @@ export default function ERPSimulator() {
 
     const runScriptStep = (stepIndex) => {
       if (stepIndex >= script.length) {
-        // Hold for 8 seconds and restart
+        // Hold for 8 seconds and restart or transition
         timer = setTimeout(() => {
-          setMessages([]);
-          setCurrentStep(0);
+          if (onComplete) {
+            onComplete();
+          } else {
+            setMessages([]);
+            setCurrentStep(0);
+          }
         }, 8000);
         return;
       }

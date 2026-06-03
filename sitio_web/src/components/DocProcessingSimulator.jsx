@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Check, CheckCheck, Send, FileText, Sparkles, Building2, ClipboardCheck } from 'lucide-react';
 
-export default function DocProcessingSimulator() {
+export default function DocProcessingSimulator({ onComplete }) {
   const [messages, setMessages] = useState([]);
   const [isTyping, setIsTyping] = useState(false);
   const [erpData, setErpData] = useState([
@@ -55,15 +55,19 @@ export default function DocProcessingSimulator() {
     
     const runScriptStep = (stepIndex) => {
       if (stepIndex >= script.length) {
-        // Hold for 7 seconds, then reset
+        // Hold for 7 seconds, then reset or transition
         timer = setTimeout(() => {
-          setMessages([]);
-          setErpData([
-            { date: '28/05', client: 'Distribuidora Norte', invoice: 'F-00489', amount: '$150.000', method: 'Galicia', status: 'Conciliado' },
-            { date: '29/05', client: 'Estudio Contable R&B', invoice: 'F-00490', amount: '$75.000', method: 'MercadoPago', status: 'Conciliado' },
-          ]);
-          setHighlightRow(false);
-          setCurrentStep(0);
+          if (onComplete) {
+            onComplete();
+          } else {
+            setMessages([]);
+            setErpData([
+              { date: '28/05', client: 'Distribuidora Norte', invoice: 'F-00489', amount: '$150.000', method: 'Galicia', status: 'Conciliado' },
+              { date: '29/05', client: 'Estudio Contable R&B', invoice: 'F-00490', amount: '$75.000', method: 'MercadoPago', status: 'Conciliado' },
+            ]);
+            setHighlightRow(false);
+            setCurrentStep(0);
+          }
         }, 7000);
         return;
       }

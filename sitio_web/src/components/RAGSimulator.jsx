@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { FileText, Send, Sparkles, Database, Check } from 'lucide-react';
 
-export default function RAGSimulator() {
+export default function RAGSimulator({ onComplete }) {
   const [messages, setMessages] = useState([]);
   const [isTyping, setIsTyping] = useState(false);
   const [currentStep, setCurrentStep] = useState(0);
@@ -62,11 +62,15 @@ export default function RAGSimulator() {
 
     const runScriptStep = (stepIndex) => {
       if (stepIndex >= script.length) {
-        // Hold for 7 seconds and restart
+        // Hold for 7 seconds and restart or transition
         timer = setTimeout(() => {
-          setMessages([]);
-          setActiveFileId(null);
-          setCurrentStep(0);
+          if (onComplete) {
+            onComplete();
+          } else {
+            setMessages([]);
+            setActiveFileId(null);
+            setCurrentStep(0);
+          }
         }, 7000);
         return;
       }
