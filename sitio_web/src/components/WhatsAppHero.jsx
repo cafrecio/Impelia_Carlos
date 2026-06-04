@@ -105,7 +105,7 @@ export default function WhatsAppHero() {
         
         {/* Spreadsheet Header */}
         <div className="bg-emerald-800 text-white px-4 py-3.5 flex items-center justify-between shrink-0">
-          <div className="flex items-center gap-2 pl-[240px] sm:pl-[285px]"> {/* Offset so title is visible to the right of the phone */}
+          <div className="flex items-center gap-2 pl-[240px] sm:pl-[285px]">
             <div className="bg-emerald-900 text-emerald-350 p-1.5 rounded-lg">
               <FileSpreadsheet className="h-4.5 w-4.5" />
             </div>
@@ -125,7 +125,6 @@ export default function WhatsAppHero() {
           <table className="w-full text-left text-xs border-collapse">
             <thead>
               <tr className="bg-slate-50 border-b border-slate-200 text-slate-500 uppercase font-bold tracking-wider text-[8px] sm:text-[9.5px] sticky top-0 z-10 shrink-0">
-                {/* Spacer column under phone area (wider to match the new phone width) */}
                 <th className="px-2 py-2.5 border-r border-slate-100 w-[230px] sm:w-[275px]"></th> 
                 <th className="px-3 py-2.5 border-r border-slate-100">Cliente</th>
                 <th className="px-3 py-2.5 border-r border-slate-100">Detalle</th>
@@ -145,7 +144,6 @@ export default function WhatsAppHero() {
                         : 'text-slate-600 bg-white hover:bg-slate-50/50'
                     }`}
                   >
-                    {/* Spacer cell under phone */}
                     <td className="px-2 py-3 border-r border-slate-100"></td>
                     <td className="px-3 py-3 border-r border-slate-100 font-bold text-slate-800 text-left">{row.client}</td>
                     <td className="px-3 py-3 border-r border-slate-100 text-[#4E5058] text-left">{row.desc}</td>
@@ -164,33 +162,33 @@ export default function WhatsAppHero() {
         </div>
       </div>
 
-      {/* 1. WHATSAPP CHAT PHONE (Foreground layer - overlapping top left) */}
-      <div className="absolute top-0 left-0 w-[220px] sm:w-[265px] bg-[#0B141A] rounded-2xl overflow-hidden border border-slate-800 shadow-2xl flex flex-col h-[450px] z-20 hover:scale-[1.02] transition-transform duration-300">
+      {/* 1. WHATSAPP CHAT PHONE (Foreground layer - overlapping top left - LIGHT MODE) */}
+      <div className="absolute top-0 left-0 w-[220px] sm:w-[265px] bg-[#EFEAE2] rounded-2xl overflow-hidden border border-slate-350 shadow-2xl flex flex-col h-[450px] z-20 hover:scale-[1.02] transition-transform duration-300">
         
-        {/* WhatsApp Header Mock */}
-        <div className="bg-[#202C33] text-white px-3 py-3 flex items-center justify-between shadow-md shrink-0 border-b border-[#2b3942]/30">
+        {/* WhatsApp Header Mock (Light Green) */}
+        <div className="bg-[#008069] text-white px-3 py-3 flex items-center justify-between shadow-md shrink-0">
           <div className="flex items-center gap-2">
             <div className="relative">
-              <div className="h-8 w-8 rounded-full bg-gradient-to-tr from-emerald-600 to-teal-500 text-white font-display font-extrabold flex items-center justify-center text-xs shadow animate-pulse">
+              <div className="h-8 w-8 rounded-full bg-emerald-100/90 text-emerald-900 font-display font-extrabold flex items-center justify-center text-xs shadow-inner">
                 I
               </div>
-              <span className="absolute bottom-0 right-0 h-2 w-2 rounded-full bg-emerald-500 border border-[#202C33]"></span>
+              <span className="absolute bottom-0 right-0 h-2 w-2 rounded-full bg-emerald-400 border-2 border-[#008069]"></span>
             </div>
             <div className="leading-tight text-left">
               <p className="font-semibold text-xs sm:text-sm text-white">Impelia Bot</p>
-              <p className="text-[9px] sm:text-[10px] text-emerald-400 font-medium">online</p>
+              <p className="text-[9px] sm:text-[10px] text-emerald-200 font-medium">online</p>
             </div>
           </div>
         </div>
 
-        {/* WhatsApp Chat Body */}
+        {/* WhatsApp Chat Body (WhatsApp Light Beige background) */}
         <div 
           ref={chatBodyRef} 
           className="flex-1 p-3 overflow-y-auto space-y-3 flex flex-col scroll-smooth"
           style={{ 
-            backgroundImage: `radial-gradient(#1f2c34 0.6px, transparent 0)`, 
-            backgroundSize: '10px 10px',
-            backgroundColor: '#0B141A'
+            backgroundImage: `radial-gradient(#dfdcd6 0.8px, transparent 0)`, 
+            backgroundSize: '14px 14px',
+            backgroundColor: '#EFEAE2'
           }}
         >
           {/* Messages Loop */}
@@ -201,14 +199,14 @@ export default function WhatsAppHero() {
                 key={index}
                 className={`max-w-[85%] rounded-xl px-3 py-2 text-xs shadow-xs flex flex-col transition-all duration-300 animate-in fade-in slide-in-from-bottom-2 ${
                   isClient
-                    ? 'bg-[#005C4B] text-[#E9EDEF] self-end rounded-tr-none'
-                    : 'bg-[#202C33] text-[#E9EDEF] self-start rounded-tl-none border border-slate-700/25'
+                    ? 'bg-[#D9FDD3] text-[#111B21] self-end rounded-tr-none'
+                    : 'bg-white text-[#111B21] self-start rounded-tl-none border border-slate-100'
                 }`}
               >
                 <p className="leading-relaxed font-sans text-left text-[11px] sm:text-[12px]">{msg.text}</p>
-                <span className="text-[8px] text-slate-400 self-end mt-1 flex items-center gap-0.5 font-medium">
+                <span className="text-[7.5px] text-slate-400 self-end mt-1 flex items-center gap-0.5 font-medium">
                   {msg.time}
-                  {isClient && <CheckCheck className="h-3 w-3 text-blue-400" />}
+                  {isClient && <CheckCheck className="h-3 w-3 text-sky-500" />}
                 </span>
               </div>
             );
@@ -216,20 +214,20 @@ export default function WhatsAppHero() {
 
           {/* Typing status */}
           {isTyping && (
-            <div className="bg-[#202C33] text-[#E9EDEF] self-start rounded-xl rounded-tl-none px-3 py-2 shadow-xs flex items-center gap-0.5 border border-slate-700/25 animate-in fade-in duration-200">
+            <div className="bg-white text-slate-800 self-start rounded-xl rounded-tl-none px-3 py-2 shadow-xs flex items-center gap-0.5 border border-slate-100 animate-in fade-in duration-200">
               <span className="h-1 w-1 rounded-full bg-slate-400 animate-pulse-dot-1"></span>
               <span className="h-1 w-1 rounded-full bg-slate-400 animate-pulse-dot-2"></span>
               <span className="h-1 w-1 rounded-full bg-slate-400 animate-pulse-dot-3"></span>
-              <span className="text-[10px] text-slate-400 ml-1.5 font-medium">Escribiendo...</span>
+              <span className="text-[10px] text-slate-500 ml-1.5 font-medium">Escribiendo...</span>
             </div>
           )}
         </div>
 
         {/* Footer Input mockup */}
-        <div className="bg-[#1F2C34] px-3 py-2.5 flex items-center gap-2 border-t border-[#2b3942]/20 shrink-0">
-          <div className="flex-1 bg-[#2A3942] rounded-full px-3.5 py-1 border border-[#2b3942]/10 text-[10px] sm:text-xs text-slate-500 flex items-center justify-between">
+        <div className="bg-[#F0F2F5] px-3 py-2.5 flex items-center gap-2 border-t border-slate-200 shrink-0">
+          <div className="flex-1 bg-white rounded-full px-3.5 py-1 border border-slate-200 text-[10px] sm:text-xs text-slate-400 flex items-center justify-between">
             <span>Mensaje...</span>
-            <Send className="h-3 w-3 text-slate-600" />
+            <Send className="h-3 w-3 text-slate-400" />
           </div>
         </div>
 
