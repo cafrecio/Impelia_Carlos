@@ -3,6 +3,7 @@
 @theme {
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --font-display: 'Outfit', system-ui, -apple-system, sans-serif;
+  --font-space: 'Space Grotesk', system-ui, -apple-system, sans-serif;
 }
 
 /* Custom styles for professional scroll behavior and animations */

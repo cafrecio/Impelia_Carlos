@@ -1,5 +1,5 @@
 import React from 'react';
-import { TrendingUp } from 'lucide-react';
+import logoNegro from '../assets/isologo_impelia_negro.png';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -9,13 +9,12 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center space-y-6 text-center">
         
         {/* Brand Group */}
-        <div className="flex items-center gap-2">
-          <div className="bg-blue-900 text-white p-1 rounded-md">
-            <TrendingUp className="h-4.5 w-4.5" />
-          </div>
-          <span className="font-display font-bold text-sm text-slate-200 tracking-tight">
-            Impelia
-          </span>
+        <div className="flex items-center">
+          <img 
+            src={logoNegro} 
+            alt="Impelia" 
+            className="h-6 sm:h-7 w-auto object-contain invert brightness-200"
+          />
         </div>
 
         {/* Tagline */}

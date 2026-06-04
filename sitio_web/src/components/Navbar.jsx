@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { TrendingUp, Menu, X, PhoneCall } from 'lucide-react';
+import { Menu, X, PhoneCall } from 'lucide-react';
+import logoImg from '../assets/isologo_impelia.png';
 
 export default function Navbar({ onOpenContact }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,13 +35,12 @@ export default function Navbar({ onOpenContact }) {
         <div className="flex items-center justify-between">
           
           {/* Logo (Izquierda) */}
-          <a href="#" className="flex items-center gap-2.5 group">
-            <div className="bg-blue-900 text-white p-1.5 rounded-lg transition-transform group-hover:scale-105 duration-300">
-              <TrendingUp className="h-5.5 w-5.5" />
-            </div>
-            <span className="font-display font-bold text-xl text-blue-900 tracking-tight">
-              Impelia
-            </span>
+          <a href="#" className="flex items-center group">
+            <img 
+              src={logoImg} 
+              alt="Impelia" 
+              className="h-7 sm:h-8 w-auto object-contain transition-transform group-hover:scale-[1.02] duration-300"
+            />
           </a>
 
           {/* Links (Centro - oculto en móvil) */}
