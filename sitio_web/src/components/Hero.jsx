@@ -1,5 +1,6 @@
 import React from 'react';
-import { Zap, ArrowRight, MessageSquare, Database, Clock } from 'lucide-react';
+import { Zap, ArrowRight } from 'lucide-react';
+import WhatsAppHero from './WhatsAppHero';
 
 export default function Hero({ onOpenContact }) {
   return (
@@ -16,7 +17,7 @@ export default function Hero({ onOpenContact }) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           
           {/* Left Column: Premium copywriting with vibe */}
-          <div className="lg:col-span-7 text-left space-y-6 md:space-y-8">
+          <div className="lg:col-span-6 text-left space-y-6 md:space-y-8">
             
             {/* Elegant Pill Badge */}
             <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500/10 to-indigo-500/10 border border-blue-500/20 px-4 py-2 rounded-full text-xs font-semibold text-blue-300 tracking-wide shadow-inner">
@@ -59,79 +60,12 @@ export default function Hero({ onOpenContact }) {
             </div>
           </div>
 
-          {/* Right Column: Premium interactive glassmorphic dashboard mockup */}
-          <div className="lg:col-span-5 relative mt-8 lg:mt-0">
+          {/* Right Column: Premium phone mockup with WhatsApp animation */}
+          <div className="lg:col-span-6 relative mt-8 lg:mt-0 flex items-center justify-center">
             {/* Glowing background halo */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/20 to-purple-500/20 rounded-3xl blur-3xl opacity-60"></div>
+            <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/10 to-purple-500/15 rounded-3xl blur-3xl opacity-50"></div>
             
-            {/* Dashboard Container */}
-            <div className="relative bg-[#0F172A]/70 backdrop-blur-xl border border-slate-800 rounded-3xl p-6 md:p-8 shadow-2xl space-y-6">
-              
-              {/* Header Status */}
-              <div className="flex items-center justify-between pb-4 border-b border-slate-800">
-                <div className="flex items-center gap-2">
-                  <span className="relative flex h-3 w-3">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
-                  </span>
-                  <span className="font-sans text-xs md:text-sm font-semibold text-slate-300 tracking-wide uppercase">
-                    Agente IA: Conectado
-                  </span>
-                </div>
-                <span className="font-sans text-[10px] font-bold bg-blue-500/10 text-blue-400 border border-blue-500/20 px-2.5 py-1 rounded-full uppercase tracking-wider">
-                  Automático
-                </span>
-              </div>
-
-              {/* Status List */}
-              <div className="space-y-4">
-                
-                {/* Status 1: WhatsApp */}
-                <div className="flex items-center gap-4 bg-slate-950/40 p-4 rounded-2xl border border-slate-800/40 hover:border-slate-800/80 transition-all duration-300">
-                  <div className="p-3 bg-emerald-500/10 text-emerald-400 rounded-xl">
-                    <MessageSquare className="h-5 w-5" />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <p className="font-sans text-[10px] text-slate-500 font-semibold uppercase tracking-wider">WhatsApp Clientes</p>
-                    <p className="font-display font-bold text-sm sm:text-base text-white">184 chats respondidos hoy</p>
-                  </div>
-                  <span className="text-xs text-emerald-400 font-semibold bg-emerald-500/10 px-2 py-0.5 rounded-full">100%</span>
-                </div>
-
-                {/* Status 2: Data Entry */}
-                <div className="flex items-center gap-4 bg-slate-950/40 p-4 rounded-2xl border border-slate-800/40 hover:border-slate-800/80 transition-all duration-300">
-                  <div className="p-3 bg-blue-500/10 text-blue-400 rounded-xl">
-                    <Database className="h-5 w-5" />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <p className="font-sans text-[10px] text-slate-500 font-semibold uppercase tracking-wider">Base de Datos / Excel</p>
-                    <p className="font-display font-bold text-sm sm:text-base text-white">Planillas Auto-actualizadas</p>
-                  </div>
-                  <div className="h-2 w-2 rounded-full bg-blue-400 animate-ping"></div>
-                </div>
-
-                {/* Status 3: Time Saved */}
-                <div className="flex items-center gap-4 bg-slate-950/40 p-4 rounded-2xl border border-slate-800/40 hover:border-slate-800/80 transition-all duration-300">
-                  <div className="p-3 bg-amber-500/10 text-amber-400 rounded-xl">
-                    <Clock className="h-5 w-5" />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <p className="font-sans text-[10px] text-slate-500 font-semibold uppercase tracking-wider">Tiempo Liberado</p>
-                    <p className="font-display font-bold text-sm sm:text-base text-white">18 horas ahorradas / sem</p>
-                  </div>
-                  <span className="text-[11px] text-amber-400 font-bold bg-amber-500/10 px-2 py-0.5 rounded-full">¡Libre!</span>
-                </div>
-
-              </div>
-
-              {/* Client Quote */}
-              <div className="pt-2 text-center border-t border-slate-800/50">
-                <p className="font-sans text-xs text-slate-400 italic">
-                  "El bot responde, actualiza el stock y nos avisa al WhatsApp administrativo."
-                </p>
-              </div>
-
-            </div>
+            <WhatsAppHero />
           </div>
 
         </div>

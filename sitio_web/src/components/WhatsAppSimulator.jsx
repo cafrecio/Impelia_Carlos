@@ -127,7 +127,7 @@ export default function WhatsAppSimulator({ onComplete }) {
               <span className="absolute bottom-0 right-0 h-2.5 w-2.5 rounded-full bg-emerald-500 border-2 border-[#075E54]"></span>
             </div>
             <div>
-              <p className="font-semibold text-base leading-none">Asistente Operativo - Impulso IA</p>
+              <p className="font-semibold text-base leading-none">Asistente Operativo - Impelia</p>
               <p className="text-sm text-emerald-300 mt-1 font-medium">En línea</p>
             </div>
           </div>

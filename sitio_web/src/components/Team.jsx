@@ -46,7 +46,7 @@ export default function Team() {
           </div>
           <div className="lg:col-span-7 space-y-6 text-slate-600 font-sans text-base sm:text-lg leading-relaxed">
             <p className="font-medium text-slate-800">
-              En Impulso IA combinamos experiencia en desarrollo de sistemas, gestión tecnológica, automatización e implementación real de soluciones en empresas.
+              En Impelia combinamos experiencia en desarrollo de sistemas, gestión tecnológica, automatización e implementación real de soluciones en empresas.
             </p>
             <p>
               No venimos a vender inteligencia artificial como una moda. Venimos a entender cómo trabaja tu empresa hoy, detectar tareas repetitivas o desordenadas, y construir herramientas concretas que ayuden a vender mejor, responder más rápido, ordenar información y tomar mejores decisiones.

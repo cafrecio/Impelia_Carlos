@@ -132,7 +132,7 @@ export default function DocProcessingSimulator({ onComplete }) {
               <span className="absolute bottom-0 right-0 h-2 w-2 rounded-full bg-emerald-500 border border-[#075E54]"></span>
             </div>
             <div>
-              <p className="font-semibold text-base leading-none">Conciliación de Cobros - Impulso IA</p>
+              <p className="font-semibold text-base leading-none">Conciliación de Cobros - Impelia</p>
               <p className="text-sm text-emerald-355 mt-1 font-medium text-emerald-300">Asistente OCR en línea</p>
             </div>
           </div>

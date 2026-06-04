@@ -39,7 +39,7 @@ export default function Navbar({ onOpenContact }) {
               <TrendingUp className="h-5.5 w-5.5" />
             </div>
             <span className="font-display font-bold text-xl text-blue-900 tracking-tight">
-              Impulso IA
+              Impelia
             </span>
           </a>
 

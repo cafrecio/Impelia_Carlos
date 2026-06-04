@@ -14,7 +14,7 @@ export default function Footer() {
             <TrendingUp className="h-4.5 w-4.5" />
           </div>
           <span className="font-display font-bold text-sm text-slate-200 tracking-tight">
-            Impulso IA
+            Impelia
           </span>
         </div>
 
@@ -28,7 +28,7 @@ export default function Footer() {
 
         {/* Legal and Copyright */}
         <div className="space-y-1 text-[11px] text-slate-500 max-w-md">
-          <p>© {currentYear} Impulso IA. Todos los derechos reservados.</p>
+          <p>© {currentYear} Impelia. Todos los derechos reservados.</p>
           <p>
             Desarrollado bajo principios de consultoría empática y soluciones tecnológicas de alta confiabilidad operativa.
           </p>
