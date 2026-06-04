@@ -4,6 +4,31 @@
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --font-display: 'Outfit', system-ui, -apple-system, sans-serif;
   --font-space: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+
+  /* Brand Colors: Primary (#3B199E) & Accent (#09C0A8) */
+  --color-blue-50: #f5f3ff;
+  --color-blue-100: #ebe5ff;
+  --color-blue-200: #dcd0ff;
+  --color-blue-300: #c4b0ff;
+  --color-blue-400: #a385ff;
+  --color-blue-500: #0cd1b7;
+  --color-blue-600: #09c0a8;
+  --color-blue-700: #4b24c4;
+  --color-blue-800: #2d128b;
+  --color-blue-900: #3b199e;
+  --color-blue-950: #1d075c;
+
+  --color-indigo-50: #f5f3ff;
+  --color-indigo-100: #ebe5ff;
+  --color-indigo-200: #dcd0ff;
+  --color-indigo-300: #c4b0ff;
+  --color-indigo-400: #a385ff;
+  --color-indigo-500: #0cd1b7;
+  --color-indigo-600: #09c0a8;
+  --color-indigo-700: #4b24c4;
+  --color-indigo-800: #2d128b;
+  --color-indigo-900: #3b199e;
+  --color-indigo-950: #1d075c;
 }
 
 /* Custom styles for professional scroll behavior and animations */
