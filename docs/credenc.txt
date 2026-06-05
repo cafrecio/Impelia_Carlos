@@ -16,3 +16,7 @@ facundo@impelia.ar
 
 mkt@impelia.ar
 NiTs/8r9gE
+
+FTP Ferozo for Github Actions
+gh-actions
+O7BrR@PhlOk17vN
