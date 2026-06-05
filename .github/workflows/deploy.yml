@@ -32,13 +32,21 @@ jobs:
         run: npm run build
         working-directory: sitio_web
 
-      - name: Deploy por FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftps
-          local-dir: sitio_web/dist/
-          server-dir: /
-          dangerous-clean-slate: false
+      - name: Instalar lftp
+        run: sudo apt-get install -y lftp
+
+      - name: Deploy por FTPS
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USER: ${{ secrets.FTP_USERNAME }}
+          FTP_PASS: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          lftp -c "
+            set ftp:ssl-force true;
+            set ftp:ssl-protect-data true;
+            set ssl:verify-certificate no;
+            set ftp:passive-mode on;
+            open -u '$FTP_USER','$FTP_PASS' '$FTP_SERVER';
+            mirror -R --verbose sitio_web/dist/ /public_html/;
+            quit
+          "
