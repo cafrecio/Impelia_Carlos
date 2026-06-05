@@ -19,7 +19,7 @@ export default function FAQ() {
     },
     {
       q: '¿Cuánto cuesta mantenerlo después de la Prueba Gratis?',
-      a: 'El costo mensual se compone de un abono de soporte mínimo (desde $150 USD) y el consumo real de los servidores de la IA (que se paga a precio de coste y suele ser de centavos de dólar por cada chat o consulta procesada). Es una fracción mínima comparado con contratar un empleado administrativo nuevo.'
+      a: 'El costo mensual se compone de un abono de soporte y el consumo real de los servidores de la IA (que se paga a precio de coste y suele ser de centavos de dólar por cada chat o consulta procesada). Es una fracción mínima comparado con contratar un empleado administrativo nuevo. Consultanos para recibir una propuesta a medida según tu caso.'
     },
     {
       q: '¿Qué pasa si la IA se equivoca o responde algo mal?',
