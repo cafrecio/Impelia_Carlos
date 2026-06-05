@@ -1,18 +1,17 @@
 Hosting
 
-https://ferozo.host
 a0130699
 Ck/o6@sv3@ol3/J
 
-
-carlos@impelia.ar
+carlos
 osj/LnR4eI
 
-marcos@impelia.ar
+marcos
 kHgsS@F0mM
 
-facundo@impelia.ar
+facundo
 @HqIrfG6dW
+
 
 mkt@impelia.ar
 NiTs/8r9gE
@@ -20,3 +19,7 @@ NiTs/8r9gE
 FTP Ferozo for Github Actions
 gh-actions
 O7BrR@PhlOk17vN
+
+mkt
+NiTs/8r9gE
+
