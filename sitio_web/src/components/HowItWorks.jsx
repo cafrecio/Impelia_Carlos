@@ -147,10 +147,10 @@ export default function HowItWorks() {
       {/* Soft circular background decoration */}
       <div className="absolute top-0 right-0 w-[450px] h-[450px] bg-blue-100/30 rounded-full blur-3xl opacity-60 pointer-events-none"></div>
       
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 relative z-10">
+      <div className="max-w-6xl mx-auto px-0 sm:px-6 lg:px-8 space-y-12 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center space-y-3">
+        <div className="text-center space-y-3 px-4 sm:px-0">
           <h2 className="font-display font-extrabold text-2xl sm:text-3xl md:text-4xl text-slate-800 tracking-tight">
             ¿Qué hace exactamente la Inteligencia Artificial por vos?
           </h2>
@@ -160,7 +160,7 @@ export default function HowItWorks() {
         </div>
 
         {/* Tab Buttons bar */}
-        <div className="flex flex-wrap justify-center gap-2 max-w-4xl mx-auto">
+        <div className="flex flex-nowrap overflow-x-auto gap-2 w-full max-w-full justify-start sm:justify-center scrollbar-none px-4 sm:px-0 pb-2">
           {tabs.map((tab) => {
             const Icon = tab.icon;
             const isActive = activeTab === tab.id;
@@ -168,14 +168,14 @@ export default function HowItWorks() {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`flex items-center gap-2 px-4.5 py-3 rounded-2xl font-display font-bold text-xs sm:text-sm border transition-all duration-300 cursor-pointer ${
+                className={`flex items-center gap-2 px-4.5 py-3 rounded-2xl font-display font-bold text-xs sm:text-sm border transition-all duration-300 cursor-pointer shrink-0 ${
                   isActive
                     ? 'bg-blue-900 text-white border-blue-900 shadow-md shadow-blue-900/10 hover:scale-[1.01]'
                     : 'bg-white text-slate-600 border-slate-200 hover:border-slate-350 hover:bg-slate-50 hover:text-slate-800 active:scale-95'
                 }`}
               >
                 <Icon className={`h-4.5 w-4.5 ${isActive ? 'text-blue-200' : 'text-slate-400'}`} />
-                <span>{tab.label}</span>
+                <span className="whitespace-nowrap">{tab.label}</span>
               </button>
             );
           })}
@@ -189,7 +189,7 @@ export default function HowItWorks() {
           
           {/* Fila Superior: Simulador Gigante (Alineado al ancho máximo de la sección principal w-full) */}
           <div className="w-full space-y-3">
-            <div className="flex items-center justify-between text-xs text-slate-500 font-semibold px-4 sm:px-2">
+            <div className="flex items-center justify-between text-xs text-slate-500 font-semibold px-4 sm:px-0">
               <span className="uppercase tracking-wider font-bold text-slate-500">{currentData.badge}</span>
               <div className="flex items-center gap-2">
                 <span className="text-[10px] bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded-md font-bold border border-emerald-200">Demo Interactiva</span>
@@ -204,7 +204,7 @@ export default function HowItWorks() {
           </div>
 
           {/* Fila Inferior: Copy y Beneficios (Grid 2 columnas) */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch px-4 sm:px-0">
             
             {/* Col 1: Tarjeta de Analogía (5/12 cols) */}
             <div className="lg:col-span-5 bg-white rounded-3xl p-6 border border-slate-100 shadow-sm flex flex-col justify-center">
