@@ -47,6 +47,6 @@ jobs:
             set ssl:verify-certificate no;
             set ftp:passive-mode on;
             open -u '$FTP_USER','$FTP_PASS' '$FTP_SERVER';
-            mirror -R --verbose sitio_web/dist/ /public_html/;
+            mirror -R --verbose sitio_web/dist/ /;
             quit
           "
