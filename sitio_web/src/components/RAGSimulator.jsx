@@ -107,7 +107,7 @@ export default function RAGSimulator({ onComplete }) {
     <div className="w-full space-y-4 animate-in fade-in duration-700">
       
       {/* Container: Mock Browser / App Shell */}
-      <div className="bg-[#0F172A] rounded-3xl overflow-hidden border border-slate-800 shadow-2xl flex flex-col md:flex-row h-[650px]">
+      <div className="bg-[#0F172A] rounded-3xl overflow-hidden border border-slate-800 shadow-2xl flex flex-col md:flex-row h-[580px] md:h-[480px]">
         
         {/* Sidebar: Files Uploaded (1/3 width on desktop) */}
         <div className="w-full md:w-64 bg-slate-950 p-4 flex flex-col justify-between border-b md:border-b-0 md:border-r border-slate-800 shrink-0">

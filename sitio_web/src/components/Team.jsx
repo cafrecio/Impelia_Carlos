@@ -6,19 +6,19 @@ import marcosImg from '../assets/marcos_300.jpg';
 export default function Team() {
   const members = [
     {
-      name: 'Lic. Carlos Bonifacio',
+      name: 'Carlos Bonifacio',
       role: 'Gestión y relación con clientes',
       image: carlosImg,
       bio: 'Viene del área de gestión de compras y negociación. Es quien acompaña el relevamiento inicial, entiende las necesidades del negocio y actúa como nexo entre el cliente y el equipo técnico.\n\nSu rol es clave para traducir problemas operativos en soluciones concretas, claras y aplicables.'
     },
     {
-      name: 'Lic. Marcos Florentín',
+      name: 'Marcos Florentín',
       role: 'Desarrollo fullstack y arquitectura técnica',
       image: marcosImg,
       bio: 'Desarrollador fullstack .NET senior, con más de 15 años de experiencia en proyectos de software para empresas y consultoras internacionales.\n\nAporta solidez técnica, criterio de arquitectura e integración de sistemas, asegurando que cada solución no sea solo una buena idea, sino una herramienta estable, escalable y bien construida.'
     },
     {
-      name: 'Lic. Facundo Methol',
+      name: 'Facundo Methol',
       role: 'Automatización e IA aplicada',
       image: facundoImg,
       bio: 'Desarrollador independiente con experiencia real aplicando IA, bots, sistemas de gestión, reservas online, análisis de datos y automatización de procesos en empresas en funcionamiento.\n\nSu foco está en convertir tareas repetitivas, consultas, planillas y flujos desordenados en soluciones prácticas conectadas a la operación diaria.'
@@ -26,7 +26,7 @@ export default function Team() {
   ];
 
   return (
-    <section id="quienes-somos" className="py-20 bg-slate-50/40 relative border-b border-slate-100">
+    <section id="quienes-somos" className="py-20 bg-slate-50/40 relative border-b border-slate-100 scroll-mt-24">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header & Intro */}

@@ -116,10 +116,10 @@ export default function DocProcessingSimulator({ onComplete }) {
   }, [currentStep]);
 
   return (
-    <div className="w-full flex flex-col md:flex-row gap-6 h-[720px] md:h-[650px] animate-in fade-in duration-700">
+    <div className="w-full flex flex-col md:flex-row gap-6 h-[580px] md:h-[480px] animate-in fade-in duration-700">
       
       {/* 1. WHATSAPP CHAT BOX (Left panel, takes 45% on desktop) */}
-      <div className="flex-1 md:w-[45%] bg-[#EFEAE2] rounded-3xl overflow-hidden border border-slate-200/80 shadow-md flex flex-col h-[340px] md:h-full">
+      <div className="flex-1 md:w-[45%] bg-[#EFEAE2] rounded-3xl overflow-hidden border border-slate-200/80 shadow-md flex flex-col h-[265px] md:h-full">
         
         {/* WhatsApp Header */}
         <div className="bg-[#075E54] text-white px-4 py-3 flex items-center justify-between shadow-md shrink-0">
@@ -210,7 +210,7 @@ export default function DocProcessingSimulator({ onComplete }) {
       </div>
 
       {/* 2. ERP LEDGER TABLE CONTAINER (Right panel, takes 55% on desktop) */}
-      <div className="flex-1 md:w-[55%] bg-white rounded-3xl border border-slate-200/80 shadow-md overflow-hidden flex flex-col h-[340px] md:h-full">
+      <div className="flex-1 md:w-[55%] bg-white rounded-3xl border border-slate-200/80 shadow-md overflow-hidden flex flex-col h-[265px] md:h-full">
         
         {/* ERP Title Bar */}
         <div className="bg-indigo-900 text-white px-4 py-3 flex items-center justify-between shrink-0">

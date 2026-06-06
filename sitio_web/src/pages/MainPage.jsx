@@ -4,8 +4,6 @@ import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import PainPoints from '../components/PainPoints';
 import HowItWorks from '../components/HowItWorks';
-import DiagnosticTool from '../components/DiagnosticTool';
-import RiskFreePilot from '../components/RiskFreePilot';
 import Testimonials from '../components/Testimonials';
 import Team from '../components/Team';
 import FAQ from '../components/FAQ';
@@ -28,23 +26,8 @@ export default function MainPage() {
 
         <Hero onOpenContact={openContact} />
 
-        <section className="py-20 bg-white relative border-b border-slate-100">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-            <div className="text-center space-y-3">
-              <h2 className="font-display font-extrabold text-2xl sm:text-3xl md:text-4xl text-slate-800 tracking-tight">
-                ¿La Inteligencia Artificial aplica en tu Pyme?
-              </h2>
-              <p className="font-sans text-sm sm:text-base text-slate-500 max-w-xl mx-auto leading-relaxed">
-                Responde estas 3 preguntas rápidas para descubrir tu puntaje de aptitud y ver cuánto tiempo podrías ahorrar.
-              </p>
-            </div>
-            <DiagnosticTool onOpenContact={openContact} />
-          </div>
-        </section>
-
         <PainPoints />
         <HowItWorks />
-        <RiskFreePilot onOpenContact={openContact} />
         <Testimonials />
         <Team />
         <FAQ />

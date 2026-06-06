@@ -19,10 +19,12 @@ export default function Navbar({ onOpenContact }) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const isPilotoPage = typeof window !== 'undefined' && window.location.pathname.includes('/piloto');
+
   const navLinks = [
     { name: '¿Te pasa esto?', href: '#sintomas' },
     { name: 'Cómo te ayudamos', href: '#como-ayuda' },
-    { name: 'Prueba Gratis', href: '#piloto' }
+    { name: 'Fácil aplicación', href: '#facil-aplicacion' }
   ];
 
   return (
@@ -35,7 +37,7 @@ export default function Navbar({ onOpenContact }) {
         <div className="flex items-center justify-between">
           
           {/* Logo (Izquierda) */}
-          <a href="#" className="flex items-center group">
+          <a href={isPilotoPage ? '/' : '#'} className="flex items-center group">
             <img 
               src={logoImg} 
               alt="Impelia" 
@@ -59,13 +61,13 @@ export default function Navbar({ onOpenContact }) {
           {/* CTA (Derecha - solo visible en escritorio) */}
           <div className="hidden md:flex items-center">
             <a
-              href="https://wa.me/5491131155986?text=Hola!%20Quiero%20postular%20mi%20empresa%20a%20la%20Prueba%20Gratis%20de%2030%20d%C3%ADas."
-              target="_blank"
-              rel="noopener noreferrer"
+              href={isPilotoPage ? "https://wa.me/5491131155986?text=Hola!%20Quiero%20postular%20mi%20empresa%20a%20la%20Prueba%20Gratis%20de%2030%20d%C3%ADas." : "/piloto"}
+              target={isPilotoPage ? "_blank" : undefined}
+              rel={isPilotoPage ? "noopener noreferrer" : undefined}
               className="bg-blue-900 hover:bg-blue-800 text-white font-semibold px-5 py-2.5 rounded-xl text-sm transition-all duration-200 hover:shadow-md cursor-pointer flex items-center gap-2"
             >
               <PhoneCall className="h-3.5 w-3.5 animate-pulse" />
-              <span>Prueba Gratis</span>
+              <span>{isPilotoPage ? "Prueba Gratis" : "Hacelo real sin costo"}</span>
             </a>
           </div>
 
@@ -99,14 +101,14 @@ export default function Navbar({ onOpenContact }) {
           ))}
           <div className="pt-2 px-4">
             <a
-              href="https://wa.me/5491131155986?text=Hola!%20Quiero%20postular%20mi%20empresa%20a%20la%20Prueba%20Gratis%20de%2030%20d%C3%ADas."
-              target="_blank"
-              rel="noopener noreferrer"
+              href={isPilotoPage ? "https://wa.me/5491131155986?text=Hola!%20Quiero%20postular%20mi%20empresa%20a%20la%20Prueba%20Gratis%20de%2030%20d%C3%ADas." : "/piloto"}
+              target={isPilotoPage ? "_blank" : undefined}
+              rel={isPilotoPage ? "noopener noreferrer" : undefined}
               onClick={() => setIsOpen(false)}
               className="w-full bg-blue-900 hover:bg-blue-800 text-white font-semibold py-3 px-5 rounded-xl text-center text-sm transition-all shadow-md cursor-pointer flex items-center justify-center gap-2"
             >
               <PhoneCall className="h-4 w-4 animate-pulse" />
-              <span>Prueba Gratis</span>
+              <span>{isPilotoPage ? "Prueba Gratis" : "Hacelo real sin costo"}</span>
             </a>
           </div>
         </div>

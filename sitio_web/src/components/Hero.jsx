@@ -3,6 +3,7 @@ import { Zap, ArrowRight } from 'lucide-react';
 import WhatsAppHero from './WhatsAppHero';
 
 export default function Hero({ onOpenContact }) {
+  const isPilotoPage = typeof window !== 'undefined' && window.location.pathname.includes('/piloto');
   return (
     <section className="relative bg-[#090D1A] text-white pt-32 pb-24 md:pt-40 md:pb-32 lg:pt-44 lg:pb-36 overflow-hidden">
       
@@ -27,28 +28,36 @@ export default function Hero({ onOpenContact }) {
 
             {/* Main Heading H1 */}
             <h1 className="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl text-white leading-[1.08] tracking-tight">
-              Menos planillas.<br />
-              Menos WhatsApps colapsados.<br />
+              Multiplicá las horas de tu equipo.<br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-300 to-purple-400 font-display">
-                Más libertad para crecer.
+                Automatizá tus procesos.
               </span>
             </h1>
 
             {/* Concise, High-Impact Subtitle */}
             <p className="font-sans text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed font-normal">
-              Delegá las tareas administrativas repetitivas en asistentes de Inteligencia Artificial hechos a medida. Sin cambiar tus sistemas, sin saber programar y 100% automático.
+              Diseñamos e implementamos asistentes de Inteligencia Artificial a la medida de tu empresa para que delegues tareas repetitivas sin cambiar tus sistemas actuales.
             </p>
 
             {/* Premium Call to Actions */}
             <div className="pt-2 flex flex-col sm:flex-row gap-4 items-stretch sm:items-center">
-              <a
-                href="https://wa.me/5491131155986?text=Hola!%20Quiero%20postular%20mi%20empresa%20a%20la%20Prueba%20Gratis%20de%2030%20d%C3%ADas."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-white hover:bg-slate-100 text-slate-900 font-bold py-4 px-8 rounded-xl text-sm sm:text-base transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-[1.02] cursor-pointer text-center"
-              >
-                Quiero mi Prueba Gratis
-              </a>
+              {isPilotoPage ? (
+                <a
+                  href="https://wa.me/5491131155986?text=Hola!%20Quiero%20postular%20mi%20empresa%20a%20la%20Prueba%20Gratis%20de%2030%20d%C3%ADas."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-white hover:bg-slate-100 text-slate-900 font-bold py-4 px-8 rounded-xl text-sm sm:text-base transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-[1.02] cursor-pointer text-center"
+                >
+                  Quiero mi Prueba Gratis
+                </a>
+              ) : (
+                <button
+                  onClick={onOpenContact}
+                  className="bg-white hover:bg-slate-100 text-slate-900 font-bold py-4 px-8 rounded-xl text-sm sm:text-base transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-[1.02] cursor-pointer text-center"
+                >
+                  Hablemos de tu proyecto
+                </button>
+              )}
               
               <a
                 href="#como-ayuda"

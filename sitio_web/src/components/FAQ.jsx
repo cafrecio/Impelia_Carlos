@@ -18,8 +18,8 @@ export default function FAQ() {
       a: 'Al contrario, lo van a amar. Les sacamos de encima el trabajo aburrido, monótono y repetitivo (copiar y pegar datos de correos, cruzar stock a mano, etc.) para que puedan enfocarse en tareas comerciales o de atención al cliente de mayor valor. Además, interactúan con la IA por WhatsApp, que ya todos saben usar sin capacitación.'
     },
     {
-      q: '¿Cuánto cuesta mantenerlo después de la Prueba Gratis?',
-      a: 'El costo mensual se compone de un abono de soporte y el consumo real de los servidores de la IA (que se paga a precio de coste y suele ser de centavos de dólar por cada chat o consulta procesada). Es una fracción mínima comparado con contratar un empleado administrativo nuevo. Consultanos para recibir una propuesta a medida según tu caso.'
+      q: '¿Cómo funciona el esquema de costos de un proyecto?',
+      a: 'Nuestro modelo es transparente: cobramos un desarrollo inicial financiado (para relevar, programar y calibrar tu solución a medida) y luego un abono mensual de soporte que cubre la optimización del sistema, más el consumo real de los servidores de IA (que se paga a precio de coste y suele ser de centavos de dólar por cada consulta). Esto te garantiza el retorno de inversión desde el primer mes.'
     },
     {
       q: '¿Qué pasa si la IA se equivoca o responde algo mal?',
@@ -32,7 +32,7 @@ export default function FAQ() {
   };
 
   return (
-    <section id="faq" className="py-20 bg-white relative border-b border-slate-100">
+    <section id="faq" className="py-20 bg-white relative border-b border-slate-100 scroll-mt-24">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
