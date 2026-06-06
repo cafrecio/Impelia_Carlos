@@ -1,4 +1,4 @@
-name: Deploy sitio_web a Ferozo por FTP
+name: Deploy sitio_web
 
 on:
   push:
@@ -7,8 +7,13 @@ on:
       - 'sitio_web/**'
   workflow_dispatch:
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 concurrency:
-  group: ftp-deploy
+  group: deploy
   cancel-in-progress: true
 
 jobs:
@@ -32,10 +37,11 @@ jobs:
         run: npm run build
         working-directory: sitio_web
 
+      # --- DEPLOY TO FEROZO (FTP) ---
       - name: Instalar lftp
         run: sudo apt-get install -y lftp
 
-      - name: Deploy por FTPS
+      - name: Deploy por FTPS (Ferozo)
         env:
           FTP_SERVER: ${{ secrets.FTP_SERVER }}
           FTP_USER: ${{ secrets.FTP_USERNAME }}
@@ -50,3 +56,20 @@ jobs:
             mirror -R --verbose sitio_web/dist/ /;
             quit
           "
+
+      # --- DEPLOY TO GITHUB PAGES ---
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: sitio_web/dist
+
+  deploy-pages:
+    needs: build-and-deploy
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
+        id: deployment
