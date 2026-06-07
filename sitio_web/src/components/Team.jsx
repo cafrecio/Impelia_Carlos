@@ -15,13 +15,13 @@ export default function Team() {
       name: 'Marcos Florentín',
       role: 'Desarrollo fullstack y arquitectura técnica',
       image: marcosImg,
-      bio: 'Desarrollador Fullstack .NET Senior con más de 15 años de trayectoria liderando la arquitectura de software e integración de sistemas para corporaciones internacionales y consultoras globales de primer nivel.\n\nSu experiencia abarca el diseño de bases de datos, APIs de alta seguridad y servicios en la nube, garantizando que cada desarrollo sea una herramienta robusta, escalable y alineada a los estándares de seguridad de la industria.'
+      bio: 'Desarrollador Fullstack .NET Senior con más de 15 años de trayectoria diseñando arquitectura de software y liderando proyectos de desarrollo para corporaciones multinacionales y consultoras globales de primer nivel.\n\nSu experiencia técnica abarca el diseño y optimización de bases de datos relacionales, la construcción de APIs seguras y la migración de sistemas a la nube, garantizando que cada desarrollo de Impelia sea una solución robusta, escalable, libre de errores y completamente alineada a los estándares internacionales de seguridad de la información.'
     },
     {
       name: 'Facundo Methol',
       role: 'Automatización e IA aplicada',
       image: facundoImg,
-      bio: 'Especialista en Automatización de Procesos e Inteligencia Artificial, con trayectoria en la implementación práctica de agentes de IA, bots de atención y sincronización de datos en tiempo real.\n\nSe enfoca en transformar flujos de trabajo analógicos, planillas desordenadas y cuellos de botella en herramientas automatizadas de alto rendimiento que se integran sin fricción en la rutina diaria del negocio.'
+      bio: 'Especialista en Automatización de Procesos e Inteligencia Artificial aplicada a la operación diaria de empresas de servicios e industriales, con amplia trayectoria en la implementación práctica de agentes de IA, automatización de flujos de trabajo e integraciones de API.\n\nSe enfoca en transformar planillas de Excel lentas, tareas administrativas manuales y cuellos de botella en herramientas automáticas de alto rendimiento que no requieren que aprendas a usar nuevos sistemas, logrando liberar horas de trabajo operativo para tu equipo desde la primera semana.'
     }
   ];
 
