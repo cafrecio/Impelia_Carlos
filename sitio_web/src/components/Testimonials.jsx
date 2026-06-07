@@ -1,7 +1,7 @@
 import React from 'react';
 import { Quote, Star } from 'lucide-react';
 
-export default function Testimonials() {
+export default function Testimonials({ onOpenContact }) {
   const testimonials = [
     {
       quote: 'Administraba todo el negocio cruzando datos entre planillas de Excel y cuadernos anotados a mano; era imposible saber realmente dónde estábamos parados. Cuando me propusieron automatizar la carga de ingresos y egresos, me pareció algo irreal. Hoy es el motor de mi día a día: le mando por chat fotos de mi agenda, capturas de transferencias de Mercado Pago, facturas o capturas de WhatsApp, y la IA procesa todo y lo asienta sin errores. Por primera vez tengo reportes de resultados reales el primer día de cada mes.',
@@ -20,7 +20,7 @@ export default function Testimonials() {
   ];
 
   return (
-    <section id="testimonios" className="py-20 bg-white relative border-b border-slate-100">
+    <section id="resultados" className="py-20 bg-white relative border-b border-slate-100 scroll-mt-24">
       
       {/* Background soft gradients */}
       <div className="absolute top-0 right-10 w-72 h-72 bg-indigo-50 rounded-full blur-3xl pointer-events-none opacity-60"></div>
@@ -28,12 +28,19 @@ export default function Testimonials() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header */}
-        <div className="text-center space-y-3 mb-16">
+        <div className="text-center space-y-3 mb-16 px-4 sm:px-0">
           <h2 className="font-display font-extrabold text-3xl sm:text-4xl text-slate-900 tracking-tight">
-            Experiencias reales
+            Qué logramos junto a nuestros clientes
           </h2>
-          <p className="font-sans text-sm sm:text-base text-slate-500 max-w-xl mx-auto leading-relaxed">
-            Casos reales de empresas que automatizaron sus tareas operativas junto a nosotros.
+          <p className="font-sans text-sm sm:text-base text-slate-500 max-w-2xl mx-auto leading-relaxed">
+            La confianza de nuestros primeros clientes y el compromiso de trabajar codo a codo nos permitieron alcanzar estos resultados.{' '}
+            <button 
+              onClick={onOpenContact} 
+              className="text-indigo-650 hover:text-indigo-850 font-bold underline cursor-pointer inline transition-colors duration-200"
+            >
+              ¡Contactanos!
+            </button>{' '}
+            para que tus ideas y empresa se conviertan en el próximo caso de éxito.
           </p>
         </div>
 

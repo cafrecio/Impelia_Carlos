@@ -28,7 +28,7 @@ export default function MainPage() {
 
         <PainPoints />
         <HowItWorks />
-        <Testimonials />
+        <Testimonials onOpenContact={openContact} />
         <Team />
         <FAQ />
         <FinalCTA onOpenContact={openContact} />
