@@ -24,7 +24,7 @@ export default function Navbar({ onOpenContact }) {
   const navLinks = [
     { name: '¿Te pasa esto?', href: '#sintomas' },
     { name: 'Cómo te ayudamos', href: '#como-ayuda' },
-    { name: 'Fácil aplicación', href: '#facil-aplicacion' }
+    { name: 'Quiénes somos', href: '#quienes-somos' }
   ];
 
   return (
