@@ -15,13 +15,13 @@ export default function Team() {
       name: 'Marcos Florentín',
       role: 'Desarrollo fullstack y arquitectura técnica',
       image: marcosImg,
-      bio: 'Desarrollador fullstack .NET senior, con más de 15 años de experiencia en proyectos de software para empresas y consultoras internacionales.\n\nAporta solidez técnica, criterio de arquitectura e integración de sistemas, asegurando que cada solución no sea solo una buena idea, sino una herramienta estable, escalable y bien construida.'
+      bio: 'Desarrollador Fullstack .NET Senior con más de 15 años de trayectoria diseñando arquitectura de software para corporaciones y consultoras globales.\n\nAporta solidez en integración de sistemas de alta complejidad, asegurando que cada desarrollo sea una herramienta robusta, escalable y alineada a los estándares de seguridad de la industria.'
     },
     {
       name: 'Facundo Methol',
       role: 'Automatización e IA aplicada',
       image: facundoImg,
-      bio: 'Desarrollador independiente con experiencia real aplicando IA, bots, sistemas de gestión, reservas online, análisis de datos y automatización de procesos en empresas en funcionamiento.\n\nSu foco está en convertir tareas repetitivas, consultas, planillas y flujos desordenados en soluciones prácticas conectadas a la operación diaria.'
+      bio: 'Desarrollador especialista en Automatización e IA, con amplia trayectoria en la implementación práctica de agentes inteligentes, integraciones de API y optimización de datos en empresas activas.\n\nSe enfoca en transformar flujos operativos complejos y planillas desordenadas en soluciones prácticas acopladas a la rutina diaria.'
     }
   ];
 
