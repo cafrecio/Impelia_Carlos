@@ -34,22 +34,22 @@ export default function Team() {
           <div className="lg:col-span-5 space-y-6">
             <div className="space-y-4">
               <h2 className="text-sm font-semibold tracking-wider text-indigo-600 uppercase">
-                Quiénes somos
+                Nuestro equipo
               </h2>
               <h3 className="font-display font-extrabold text-3xl sm:text-4xl text-slate-900 tracking-tight leading-tight">
-                Un equipo técnico,<br />con mirada de negocio.
+                Un equipo técnico<br />con mentalidad de negocio.
               </h3>
             </div>
             <p className="text-sm sm:text-base text-slate-500 border-l-2 border-indigo-500 pl-4 italic">
-              Somos tres profesionales formados en Análisis de Sistemas y Gestión de Tecnología, con perfiles complementarios: gestión y vínculo con clientes, IA aplicada a procesos reales, y desarrollo fullstack con experiencia en proyectos internacionales.
+              Somos un grupo de profesionales formados en Gestión de Tecnología, con amplia experiencia y formación complementaria en industrias diversas. Esto nos permite brindar soluciones en las distintas áreas de tu empresa, transformando tu tecnología actual en un activo que multiplica la productividad de todo tu equipo.
             </p>
           </div>
           <div className="lg:col-span-7 space-y-6 text-slate-600 font-sans text-base sm:text-lg leading-relaxed">
             <p className="font-medium text-slate-800">
-              En Impelia combinamos experiencia en desarrollo de sistemas, gestión tecnológica, automatización e implementación real de soluciones en empresas.
+              No te vendemos la Inteligencia Artificial como una moda ni como una fórmula mágica. Nuestro trabajo se centra en colaborar con vos y tu equipo para entender la dinámica de tus procesos y potenciar sus fortalezas, diseñando herramientas que liberen tiempo, mejoren la información actual, aporten datos críticos para decidir, reestructuren flujos de trabajo o den un mejor soporte a tus clientes.
             </p>
             <p>
-              No venimos a vender inteligencia artificial como una moda. Venimos a entender cómo trabaja tu empresa hoy, detectar tareas repetitivas o desordenadas, y construir herramientas concretas que ayuden a vender mejor, responder más rápido, ordenar información y tomar mejores decisiones.
+              Como especialistas en sistemas con trayectoria en empresas de producción, servicios y tecnología, te ayudamos a implementar la IA justa para que tu equipo recupere el tiempo necesario para llevar el negocio al siguiente nivel.
             </p>
           </div>
         </div>
