@@ -9,7 +9,7 @@ export default function Team() {
       name: 'Carlos Bonifacio',
       role: 'Gestión y relación con clientes',
       image: carlosImg,
-      bio: 'Viene del área de gestión de compras y negociación. Es quien acompaña el relevamiento inicial, entiende las necesidades del negocio y actúa como nexo entre el cliente y el equipo técnico.\n\nSu rol es clave para traducir problemas operativos en soluciones concretas, claras y aplicables.'
+      bio: 'Su experiencia de más de 20 años en empresas nacionales y multinacionales de sectores como minería, metalurgia e industria naval, sumada a su formación en Administración de Empresas y Sistemas, le permiten comprender a fondo las necesidades de tu negocio, aportar ideas estratégicas y diseñar proyectos de transformación a largo plazo.\n\nSu rol es clave como nexo para que tus ideas y proyectos se traduzcan en soluciones concretas, claras y aplicables, con el objetivo de obtener lo mejor de tu empresa y de Impelia.'
     },
     {
       name: 'Marcos Florentín',
