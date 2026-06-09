@@ -7,12 +7,12 @@ export default function Footer() {
   return (
     <footer className="bg-slate-950 text-slate-500 py-12 border-t border-slate-900/60">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center space-y-6 text-center">
-        
+
         {/* Brand Group */}
         <div className="flex items-center">
-          <img 
-            src={logoNegro} 
-            alt="Impelia" 
+          <img
+            src={logoNegro}
+            alt="Impelia"
             className="h-6 sm:h-7 w-auto object-contain invert brightness-200"
           />
         </div>

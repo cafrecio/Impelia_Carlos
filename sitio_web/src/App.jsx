@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { MessageCircle } from 'lucide-react';
+import SocialSidebar from './components/SocialSidebar';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import PainPoints from './components/PainPoints';
@@ -77,6 +78,7 @@ function HomePage() {
 export default function App() {
   return (
     <BrowserRouter>
+      <SocialSidebar />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/productos" element={<ProductosPage />} />
