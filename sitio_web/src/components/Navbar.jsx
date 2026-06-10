@@ -59,83 +59,76 @@ export default function Navbar({ onOpenContact }) {
             </a>
           )}
 
-          {/* Links (Centro - oculto en móvil) */}
-          <div className="hidden md:flex items-center gap-8">
+          {/* Links (Centro - oculto en subpáginas y móvil) */}
+          {!isSubPage && (
+            <div className="hidden md:flex items-center gap-8">
+              {navLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className="text-sm font-semibold text-slate-600 hover:text-blue-900 transition-colors duration-200"
+                >
+                  {link.name}
+                </a>
+              ))}
+            </div>
+          )}
+
+          {/* CTA (Derecha - se muestra directamente en móvil en subpáginas) */}
+          <div className={isSubPage ? "flex items-center" : "hidden md:flex items-center"}>
+            {isPilotoPage ? (
+              <a
+                href="https://wa.me/5491131155986?text=¡Hola!%20Quiero%20postular%20mi%20empresa%20a%20la%20Prueba%20Gratis%20de%2030%20días."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-blue-900 hover:bg-blue-800 text-white font-semibold px-4 py-2 sm:px-5 sm:py-2.5 rounded-xl text-xs sm:text-sm transition-all duration-200 hover:shadow-md cursor-pointer flex items-center gap-1.5 sm:gap-2"
+              >
+                <PhoneCall className="h-3.5 w-3.5 sm:h-4 sm:w-4 animate-pulse" />
+                <span>Prueba Gratis</span>
+              </a>
+            ) : (
+              <Link
+                to="/piloto"
+                className="bg-blue-900 hover:bg-blue-800 text-white font-semibold px-4 py-2 sm:px-5 sm:py-2.5 rounded-xl text-xs sm:text-sm transition-all duration-200 hover:shadow-md cursor-pointer flex items-center gap-1.5 sm:gap-2"
+              >
+                <PhoneCall className="h-3.5 w-3.5 sm:h-4 sm:w-4 animate-pulse" />
+                <span>Hacelo real sin costo</span>
+              </Link>
+            )}
+          </div>
+
+          {/* Botón menú móvil (Solo visible en página de inicio) */}
+          {!isSubPage && (
+            <div className="flex md:hidden">
+              <button
+                onClick={() => setIsOpen(!isOpen)}
+                className="p-2 rounded-xl text-slate-600 hover:text-blue-900 hover:bg-slate-50 transition-colors cursor-pointer"
+              >
+                {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              </button>
+            </div>
+          )}
+
+        </div>
+      </div>
+
+      {/* Drawer menú móvil (Solo visible en página de inicio) */}
+      {!isSubPage && (
+        <div className={`md:hidden fixed inset-x-0 top-[65px] bg-white border-b border-slate-100 shadow-xl transition-all duration-300 ease-in-out ${
+          isOpen ? 'opacity-100 translate-y-0 visible' : 'opacity-0 -translate-y-4 invisible'
+        }`}>
+          <div className="px-4 pt-3 pb-6 space-y-3 bg-white">
             {navLinks.map((link) => (
               <a
                 key={link.name}
-                href={isSubPage ? `/${link.href}` : link.href}
-                className="text-sm font-semibold text-slate-600 hover:text-blue-900 transition-colors duration-200"
+                href={link.href}
+                onClick={() => setIsOpen(false)}
+                className="block px-4 py-3 rounded-xl text-base font-semibold text-slate-700 hover:text-blue-900 hover:bg-slate-50 transition-all duration-200"
               >
                 {link.name}
               </a>
             ))}
-          </div>
-
-          {/* CTA (Derecha - solo visible en escritorio) */}
-          <div className="hidden md:flex items-center">
-            {isPilotoPage ? (
-              <a
-                href="https://wa.me/5491131155986?text=¡Hola!%20Quiero%20postular%20mi%20empresa%20a%20la%20Prueba%20Gratis%20de%2030%20días."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-blue-900 hover:bg-blue-800 text-white font-semibold px-5 py-2.5 rounded-xl text-sm transition-all duration-200 hover:shadow-md cursor-pointer flex items-center gap-2"
-              >
-                <PhoneCall className="h-3.5 w-3.5 animate-pulse" />
-                <span>Prueba Gratis</span>
-              </a>
-            ) : (
-              <Link
-                to="/piloto"
-                className="bg-blue-900 hover:bg-blue-800 text-white font-semibold px-5 py-2.5 rounded-xl text-sm transition-all duration-200 hover:shadow-md cursor-pointer flex items-center gap-2"
-              >
-                <PhoneCall className="h-3.5 w-3.5 animate-pulse" />
-                <span>Hacelo real sin costo</span>
-              </Link>
-            )}
-          </div>
-
-          {/* Botón menú móvil */}
-          <div className="flex md:hidden">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="p-2 rounded-xl text-slate-600 hover:text-blue-900 hover:bg-slate-50 transition-colors cursor-pointer"
-            >
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </button>
-          </div>
-
-        </div>
-      </div>
-
-      {/* Drawer menú móvil */}
-      <div className={`md:hidden fixed inset-x-0 top-[65px] bg-white border-b border-slate-100 shadow-xl transition-all duration-300 ease-in-out ${
-        isOpen ? 'opacity-100 translate-y-0 visible' : 'opacity-0 -translate-y-4 invisible'
-      }`}>
-        <div className="px-4 pt-3 pb-6 space-y-3 bg-white">
-          {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={isSubPage ? `/${link.href}` : link.href}
-              onClick={() => setIsOpen(false)}
-              className="block px-4 py-3 rounded-xl text-base font-semibold text-slate-700 hover:text-blue-900 hover:bg-slate-50 transition-all duration-200"
-            >
-              {link.name}
-            </a>
-          ))}
-          <div className="pt-2 px-4">
-            {isPilotoPage ? (
-              <a
-                href="https://wa.me/5491131155986?text=¡Hola!%20Quiero%20postular%20mi%20empresa%20a%20la%20Prueba%20Gratis%20de%2030%20días."
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => setIsOpen(false)}
-                className="w-full bg-blue-900 hover:bg-blue-800 text-white font-semibold py-3 px-5 rounded-xl text-center text-sm transition-all shadow-md cursor-pointer flex items-center justify-center gap-2"
-              >
-                <PhoneCall className="h-4 w-4 animate-pulse" />
-                <span>Prueba Gratis</span>
-              </a>
-            ) : (
+            <div className="pt-2 px-4">
               <Link
                 to="/piloto"
                 onClick={() => setIsOpen(false)}
@@ -144,10 +137,10 @@ export default function Navbar({ onOpenContact }) {
                 <PhoneCall className="h-4 w-4 animate-pulse" />
                 <span>Hacelo real sin costo</span>
               </Link>
-            )}
+            </div>
           </div>
         </div>
-      </div>
+      )}
     </nav>
   );
 }
