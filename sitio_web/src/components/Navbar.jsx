@@ -21,6 +21,8 @@ export default function Navbar({ onOpenContact }) {
   }, []);
 
   const isProductosPage = typeof window !== 'undefined' && window.location.pathname.includes('/productos');
+  const isPilotoPage = typeof window !== 'undefined' && window.location.pathname.includes('/piloto');
+  const isSubPage = isProductosPage || isPilotoPage;
 
   const navLinks = [
     { name: '¿Te pasa esto?', href: '#sintomas' },
@@ -39,7 +41,7 @@ export default function Navbar({ onOpenContact }) {
         <div className="flex items-center justify-between">
           
           {/* Logo (Izquierda) */}
-          {isProductosPage ? (
+          {isSubPage ? (
             <Link to="/" className="flex items-center group">
               <img 
                 src={logoImg} 
@@ -62,7 +64,7 @@ export default function Navbar({ onOpenContact }) {
             {navLinks.map((link) => (
               <a
                 key={link.name}
-                href={link.href}
+                href={isSubPage ? `/${link.href}` : link.href}
                 className="text-sm font-semibold text-slate-600 hover:text-blue-900 transition-colors duration-200"
               >
                 {link.name}
@@ -72,9 +74,9 @@ export default function Navbar({ onOpenContact }) {
 
           {/* CTA (Derecha - solo visible en escritorio) */}
           <div className="hidden md:flex items-center">
-            {isProductosPage ? (
+            {isPilotoPage ? (
               <a
-                href="https://wa.me/5491131155986?text=Hola!%20Quiero%20postular%20mi%20empresa%20a%20la%20Prueba%20Gratis%20de%2030%20d%C3%ADas."
+                href="https://wa.me/5491131155986?text=¡Hola!%20Quiero%20postular%20mi%20empresa%20a%20la%20Prueba%20Gratis%20de%2030%20días."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-blue-900 hover:bg-blue-800 text-white font-semibold px-5 py-2.5 rounded-xl text-sm transition-all duration-200 hover:shadow-md cursor-pointer flex items-center gap-2"
@@ -84,7 +86,7 @@ export default function Navbar({ onOpenContact }) {
               </a>
             ) : (
               <Link
-                to="/productos"
+                to="/piloto"
                 className="bg-blue-900 hover:bg-blue-800 text-white font-semibold px-5 py-2.5 rounded-xl text-sm transition-all duration-200 hover:shadow-md cursor-pointer flex items-center gap-2"
               >
                 <PhoneCall className="h-3.5 w-3.5 animate-pulse" />
@@ -114,7 +116,7 @@ export default function Navbar({ onOpenContact }) {
           {navLinks.map((link) => (
             <a
               key={link.name}
-              href={link.href}
+              href={isSubPage ? `/${link.href}` : link.href}
               onClick={() => setIsOpen(false)}
               className="block px-4 py-3 rounded-xl text-base font-semibold text-slate-700 hover:text-blue-900 hover:bg-slate-50 transition-all duration-200"
             >
@@ -122,9 +124,9 @@ export default function Navbar({ onOpenContact }) {
             </a>
           ))}
           <div className="pt-2 px-4">
-            {isProductosPage ? (
+            {isPilotoPage ? (
               <a
-                href="https://wa.me/5491131155986?text=Hola!%20Quiero%20postular%20mi%20empresa%20a%20la%20Prueba%20Gratis%20de%2030%20d%C3%ADas."
+                href="https://wa.me/5491131155986?text=¡Hola!%20Quiero%20postular%20mi%20empresa%20a%20la%20Prueba%20Gratis%20de%2030%20días."
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setIsOpen(false)}
@@ -135,7 +137,7 @@ export default function Navbar({ onOpenContact }) {
               </a>
             ) : (
               <Link
-                to="/productos"
+                to="/piloto"
                 onClick={() => setIsOpen(false)}
                 className="w-full bg-blue-900 hover:bg-blue-800 text-white font-semibold py-3 px-5 rounded-xl text-center text-sm transition-all shadow-md cursor-pointer flex items-center justify-center gap-2"
               >

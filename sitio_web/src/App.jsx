@@ -13,6 +13,7 @@ import FinalCTA from './components/FinalCTA';
 import Footer from './components/Footer';
 import ContactModal from './components/ContactModal';
 import ProductosPage from './pages/ProductosPage';
+import PilotoPage from './pages/PilotoPage';
 
 function HomePage() {
   const [isContactOpen, setIsContactOpen] = useState(false);
@@ -65,6 +66,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/productos" element={<ProductosPage />} />
+        <Route path="/piloto" element={<PilotoPage />} />
       </Routes>
     </BrowserRouter>
   );
