@@ -167,7 +167,7 @@ export default function PilotoPage() {
         </section>
 
         {/* LÍNEA DE TIEMPO / PASO A PASO */}
-        <section className="py-20 bg-slate-50/40 border-b border-slate-100">
+        <section id="como-funciona" className="py-20 bg-slate-50/40 border-b border-slate-100 scroll-mt-24">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center space-y-3 mb-16">
               <h2 className="font-display font-extrabold text-3xl text-slate-900 tracking-tight">
@@ -205,7 +205,7 @@ export default function PilotoPage() {
         </section>
 
         {/* EJEMPLOS CONCRETOS */}
-        <section className="py-20 bg-white border-b border-slate-100">
+        <section id="que-automatizar" className="py-20 bg-white border-b border-slate-100 scroll-mt-24">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center space-y-3 mb-16">
               <h2 className="font-display font-extrabold text-3xl text-slate-900 tracking-tight">
@@ -238,7 +238,7 @@ export default function PilotoPage() {
         </section>
 
         {/* TRANSPARENCIA DE COSTOS */}
-        <section className="py-20 bg-slate-50/40 border-b border-slate-100">
+        <section id="costos" className="py-20 bg-slate-50/40 border-b border-slate-100 scroll-mt-24">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center space-y-3 mb-12">
               <h2 className="font-display font-extrabold text-3xl text-slate-900 tracking-tight">
@@ -306,7 +306,7 @@ export default function PilotoPage() {
         </section>
 
         {/* FAQs */}
-        <section className="py-20 bg-white relative border-b border-slate-100 scroll-mt-24">
+        <section id="preguntas-piloto" className="py-20 bg-white relative border-b border-slate-100 scroll-mt-24">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center space-y-3 mb-16">
               <div className="inline-flex p-3 bg-blue-50 text-blue-600 rounded-2xl mb-2">

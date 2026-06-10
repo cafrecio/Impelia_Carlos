@@ -131,7 +131,7 @@ export default function ProductosPage() {
         </section>
 
         {/* Productos grid */}
-        <section className="py-20 bg-white border-b border-slate-100">
+        <section id="soluciones" className="py-20 bg-white border-b border-slate-100 scroll-mt-24">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center space-y-3 mb-14">
               <h2 className="font-display font-extrabold text-3xl sm:text-4xl text-slate-900 tracking-tight">
