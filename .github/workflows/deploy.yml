@@ -33,9 +33,11 @@ jobs:
         run: npm ci
         working-directory: sitio_web
 
-      - name: Build
+      - name: Build para Ferozo
         run: npm run build
         working-directory: sitio_web
+        env:
+          VITE_BASE_PATH: /
 
       # --- DEPLOY TO FEROZO (FTP) ---
       - name: Instalar lftp
@@ -56,6 +58,12 @@ jobs:
             mirror -R --verbose sitio_web/dist/ /;
             quit
           "
+
+      - name: Build para GitHub Pages
+        run: npm run build
+        working-directory: sitio_web
+        env:
+          VITE_BASE_PATH: /impulso-ia/
 
       # --- DEPLOY TO GITHUB PAGES ---
       - name: Upload Pages Artifact
