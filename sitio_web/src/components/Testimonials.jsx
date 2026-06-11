@@ -1,26 +1,26 @@
 import React from 'react';
 import { Quote, Star } from 'lucide-react';
 
-export default function Testimonials() {
+export default function Testimonials({ onOpenContact }) {
   const testimonials = [
     {
-      quote: 'Teníamos a dos personas perdiendo toda la mañana cargando pedidos de WhatsApp a la planilla. Empezamos con la prueba gratis y ahora los pedidos entran solos al Excel y se autogenera la nota de venta. Es un viaje de ida.',
-      author: 'Gastón R.',
-      company: 'Distribuidora de Alimentos',
-      location: 'Buenos Aires',
-      initials: 'GR'
+      quote: 'Administraba todo el negocio cruzando datos entre planillas de Excel y cuadernos anotados a mano; era imposible saber realmente dónde estábamos parados. Cuando me propusieron automatizar la carga de ingresos y egresos, me pareció algo irreal. Hoy es el motor de mi día a día: le mando por chat fotos de mi agenda, capturas de transferencias de Mercado Pago, facturas o capturas de WhatsApp, y la IA procesa todo y lo asienta sin errores. Por primera vez tengo reportes de resultados reales el primer día de cada mes.',
+      author: 'Vanina',
+      company: 'Escuela de Formación Deportiva',
+      location: 'CABA',
+      initials: 'V'
     },
     {
-      quote: 'Seguir los presupuestos enviados era imposible. El asistente de IA les hace el seguimiento por WhatsApp a los 3 y 7 días de forma ultra personalizada. Recuperamos 4 ventas grandes en el primer mes de prueba.',
-      author: 'Mariana L.',
-      company: 'Constructora y Desarrolladora',
-      location: 'Córdoba',
-      initials: 'ML'
+      quote: 'Me acercaron la propuesta en una reunión de amigos y estaba seguro de que no aplicaba a nuestro caso: el trabajo en la planta es muy artesanal y nuestro sistema de gestión es sumamente rígido. Acepté conversar solo por cortesía. Decidimos probar con un proceso interno de bajo riesgo: la generación de órdenes de trabajo. El cambio fue inmediato: nos ahorró horas de carga y eliminó los desajustes de stock por consumos internos. Hoy ya estamos trabajando en el siguiente paso: automatizar la atención y cotizaciones rápidas por WhatsApp.',
+      author: 'Miguel',
+      company: 'Empresa Metalúrgica',
+      location: 'CABA',
+      initials: 'M'
     }
   ];
 
   return (
-    <section id="testimonios" className="py-20 bg-white relative border-b border-slate-100">
+    <section id="resultados" className="py-20 bg-white relative border-b border-slate-100 scroll-mt-24">
       
       {/* Background soft gradients */}
       <div className="absolute top-0 right-10 w-72 h-72 bg-indigo-50 rounded-full blur-3xl pointer-events-none opacity-60"></div>
@@ -28,12 +28,19 @@ export default function Testimonials() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header */}
-        <div className="text-center space-y-3 mb-16">
+        <div className="text-center space-y-3 mb-16 px-4 sm:px-0">
           <h2 className="font-display font-extrabold text-3xl sm:text-4xl text-slate-900 tracking-tight">
-            Qué dicen los que ya lo probaron
+            Qué logramos junto a nuestros clientes
           </h2>
-          <p className="font-sans text-sm sm:text-base text-slate-500 max-w-xl mx-auto leading-relaxed">
-            Resultados reales obtenidos durante nuestras primeras pruebas gratis con PyMEs locales.
+          <p className="font-sans text-sm sm:text-base text-slate-500 max-w-2xl mx-auto leading-relaxed">
+            La confianza de nuestros primeros clientes y el compromiso de trabajar codo a codo nos permitieron alcanzar estos resultados.{' '}
+            <button 
+              onClick={onOpenContact} 
+              className="text-indigo-650 hover:text-indigo-850 font-bold underline cursor-pointer inline transition-colors duration-200"
+            >
+              ¡Contactanos!
+            </button>{' '}
+            para que tus ideas y empresa se conviertan en el próximo caso de éxito.
           </p>
         </div>
 

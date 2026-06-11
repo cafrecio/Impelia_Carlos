@@ -4,11 +4,11 @@ import { AlertCircle } from 'lucide-react';
 export default function PainPoints() {
   const pains = [
     {
-      title: 'El caos administrativo manual',
-      desc: 'Tus empleados dedican horas críticas a pasar información de planillas a sistemas de facturación, cruzar stock a mano, copiar y pegar datos de correos electrónicos o cargar datos sueltos de Excel al final del día.'
+      title: 'Cuellos de botella operativos',
+      desc: 'Vos y tu equipo dedican muchas horas a copiar y pegar información, cargar datos manualmente, hacer reportes de gestión ingresando a mano datos de diferentes fuentes, cruzar datos desde diferentes reportes o Excel infinitos arrojados por tu sistema, e incluso transcribir reuniones, minutas e ideas de agendas o papeles sueltos.'
     },
     {
-      title: 'Seguimientos y cotizaciones demoradas',
+      title: 'Demoras en cotizaciones, imposibilidad de seguimiento',
       desc: 'Presupuestos enviados que se quedan "en el limbo" porque a tu equipo no le da el tiempo para hacer un seguimiento personalizado. O clientes potenciales que escriben fuera de horario y no reciben respuesta a tiempo.'
     },
     {
@@ -18,7 +18,7 @@ export default function PainPoints() {
   ];
 
   return (
-    <section id="sintomas" className="py-20 bg-white relative overflow-hidden">
+    <section id="sintomas" className="py-14 bg-white relative overflow-hidden scroll-mt-24">
       
       {/* Decorative background grid element */}
       <div className="absolute inset-0 opacity-[0.01] bg-[radial-gradient(#1e3a8a_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none"></div>
@@ -31,7 +31,7 @@ export default function PainPoints() {
             ¿Te suena familiar alguna de estas situaciones?
           </h2>
           <p className="font-sans text-sm sm:text-base text-slate-500 max-w-xl mx-auto leading-relaxed">
-            Si respondés "sí" a alguna de ellas, tu empresa está perdiendo tiempo administrativo valioso y ventas reales todos los días.
+            Si respondés "sí" a alguna de ellas, tu empresa está perdiendo tiempo operativo valioso, productividad y ventas reales todos los días.
           </p>
         </div>
 

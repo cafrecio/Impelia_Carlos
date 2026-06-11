@@ -35,12 +35,12 @@ export default function HowItWorks() {
         return null;
     }
   };
-
-  const useCasesData = {
+  const useCasesData = {
     whatsapp: {
+      translationTitle: 'el Asistente de WhatsApp',
       badge: 'CASO DE EJEMPLO: AUTOMATIZACIÓN DE VENTAS',
       analogyTitle: '¿Cómo funciona en tu día a día?',
-      analogyText: '<strong>La Inteligencia Artificial actúa como un conector invisible</strong>. Lee correos, mensajes de WhatsApp, archivos PDF o planillas, extrae la información relevante sin cometer errores y la ingresa automáticamente en tus planillas de Excel, sistemas de facturación o software de gestión.',
+      analogyText: '<strong>Actúa como un puente inteligente.</strong> Traduce la información desordenada que te llega por chat o mail (como mensajes de voz, textos informales o fotos), extrae los datos clave y los escribe directamente en tus sistemas de siempre (Excel, Sheets, ERP o CRM) como si lo hiciera un asistente humano.',
       benefits: [
         {
           title: 'Siguen usando WhatsApp como siempre',
@@ -55,17 +55,18 @@ export default function HowItWorks() {
           desc: 'Si el vendedor olvida un dato crucial (por ejemplo, el turno de agenda o CUIT), la IA le responde el chat preguntándole el dato faltante antes de guardar nada.'
         },
         {
-          title: 'Todo queda en planillas en tiempo real',
-          desc: 'Los datos estructurados de la venta se cargan de inmediato en una planilla de Excel compartida en la nube. Vos y tu equipo pueden ver las ventas actualizadas al instante.'
+          title: 'Todo queda registrado al instante',
+          desc: 'Los datos estructurados de la venta se cargan de inmediato en Excel, Sheets o tu sistema de gestión (ERP). Vos y tu equipo pueden ver los datos actualizados al instante.'
         }
       ],
       additionalBadgeTitle: 'Otros Procesos que Automatizamos:',
       additionalBadges: ['Facturación automática', 'Seguimiento de presupuestos', 'Control de stock e inventario', 'Consolidación de reportes']
     },
     rag: {
+      translationTitle: 'el Chat de Conocimiento',
       badge: 'DEMO EN VIVO: CHAT CON BASE DE CONOCIMIENTOS',
       analogyTitle: '¿Qué es y cómo te sirve?',
-      analogyText: '<strong>Es como un ChatGPT que solo sabe de tu empresa</strong>. Al subir tus catálogos, listas de precios o manuales de políticas a la base de conocimiento de la IA, tus vendedores o clientes pueden hacerle preguntas complejas en lenguaje natural y obtener respuestas exactas al instante.',
+      analogyText: '<strong>Es como tener un ChatGPT privado y exclusivo para tu empresa.</strong> Al indexar tus listas de precios, catálogos, políticas o instructivos, tu equipo o tus clientes pueden consultarle cualquier dato técnico o comercial y obtener la información exacta en segundos, sin perder tiempo buscando en carpetas o PDFs infinitos.',
       benefits: [
         {
           title: 'Respuestas precisas 24/7 sin inventar',
@@ -73,11 +74,11 @@ export default function HowItWorks() {
         },
         {
           title: 'Referencias y fuentes exactas',
-          desc: 'Cada respuesta indica el archivo y el número de página de donde se extrajo el dato, lo que le da total transparencia y seguridad a tu equipo administrativo.'
+          desc: 'Cada respuesta indica el archivo y el número de página de donde se extrajo el dato, lo que le da total transparencia y seguridad a tu organización.'
         },
         {
-          title: 'Acompañamiento rápido a vendedores',
-          desc: 'Ideal para que vendedores nuevos consulten al instante precios actualizados, fichas técnicas complejas, plazos de entrega o políticas de cambio.'
+          title: 'Capacitación y consulta inmediata',
+          desc: 'Ideal para que cualquier miembro del equipo consulte al instante precios, fichas técnicas complejas, plazos o normativas internas.'
         },
         {
           title: 'Acceso autónomo para clientes',
@@ -88,9 +89,10 @@ export default function HowItWorks() {
       additionalBadges: ['Catálogos de productos', 'Listas de precios mayoristas', 'Fichas técnicas y manuales', 'Políticas de cambios y garantía']
     },
     erp: {
+      translationTitle: 'el Asistente de Datos',
       badge: 'DEMO EN VIVO: ASISTENTE DE REPORTES Y DATOS',
       analogyTitle: '¿Cómo ayuda a la toma de decisiones?',
-      analogyText: '<strong>Convierte tus datos fríos en respuestas directas</strong>. La IA se conecta de forma segura a tu sistema de gestión o base de datos SQL y te permite consultar ventas, stock o márgenes en lenguaje natural desde Slack, Teams o un portal web.',
+      analogyText: '<strong>Traduce tus bases de datos complejas en respuestas sencillas.</strong> La IA se conecta de forma segura a tus sistemas de registros actuales (ERP, sistema de gestión, CRM, Excel, Base de datos o Sheets) y te permite consultar ventas, stock o márgenes de ganancia en lenguaje natural, directamente desde tu chat o web.',
       benefits: [
         {
           title: 'Reportes ejecutivos inmediatos',
@@ -98,7 +100,7 @@ export default function HowItWorks() {
         },
         {
           title: 'Cero exportaciones manuales a Excel',
-          desc: 'Ya no necesitás pasar horas cruzando datos de facturación con planillas de stock. La IA realiza los queries SQL complejos en milisegundos por vos.'
+          desc: 'Ya no necesitás pasar horas cruzando datos de facturación con planillas de stock. La IA realiza el cruce de datos complejo por vos en milisegundos.'
         },
         {
           title: 'Comparativas dinámicas de crecimiento',
@@ -110,28 +112,29 @@ export default function HowItWorks() {
         }
       ],
       additionalBadgeTitle: 'Sistemas que Integramos:',
-      additionalBadges: ['Tango Gestión / SAP B1', 'Bases de Datos SQL Server', 'PostgreSQL / MySQL', 'Sistemas de Facturación Propios']
+      additionalBadges: ['Sistemas ERP y CRM', 'Bases de Datos Corporativas', 'Planillas de cálculo (Excel / Sheets)', 'Sistemas de Facturación Propios']
     },
     ocr: {
+      translationTitle: 'la Lectura de Documentos',
       badge: 'DEMO EN VIVO: LECTURA AUTOMÁTICA DE COMPROBANTES',
-      analogyTitle: '¿Cómo optimiza la administración?',
-      analogyText: '<strong>La IA lee y concilia tus comprobantes de pago</strong>. Cuando tus clientes te envían un ticket, foto o PDF de transferencia, la IA lee los datos clave (CUIT, monto, CBU) y los concilia de forma automática contra tus facturas pendientes.',
+      analogyTitle: '¿Cómo optimiza tus operaciones?',
+      analogyText: '<strong>Traduce documentos físicos o digitales en datos listos para usar.</strong> Cuando recibís un ticket, factura de proveedor, PDF de transferencia o remito, la IA extrae al instante los datos clave (CUIT, montos, CBU, códigos) y los ingresa en tus sistemas sin que tengas que transcribir una sola línea.',
       benefits: [
         {
           title: 'Lectura inteligente sin plantillas previas',
-          desc: 'A diferencia del software OCR antiguo, la IA entiende de forma semántica cualquier formato de comprobante de cualquier banco o billetera virtual.'
+          desc: 'A diferencia del software de escaneo tradicional, la IA entiende el contexto de cualquier documento de cualquier formato, emisor o banco.'
         },
         {
           title: 'Carga automática libre de errores',
           desc: 'Extrae montos exactos, fechas, CUITs y CBUs en milisegundos, eliminando los errores humanos de tipeo y la carga manual repetitiva.'
         },
         {
-          title: 'Conciliación bancaria al instante',
-          desc: 'Cruza el comprobante recibido con tus facturas pendientes en tu sistema de gestión para marcarlas como abonadas de forma inmediata.'
+          title: 'Conciliación e imputación automática',
+          desc: 'Cruza y asienta el documento en tu sistema o Excel, vinculándolo de forma inmediata al cliente o proveedor correspondiente.'
         },
         {
-          title: 'Notificaciones automáticas listas',
-          desc: 'Envía un aviso de cobro exitoso al cliente y notifica al área administrativa tan pronto como se valida y concilia la transferencia bancaria.'
+          title: 'Alertas y notificaciones al instante',
+          desc: 'Envía avisos inmediatos a tus clientes o proveedores y notifica a tu equipo en el acto.'
         }
       ],
       additionalBadgeTitle: 'Formatos Soportados:',
@@ -142,7 +145,7 @@ export default function HowItWorks() {
   const currentData = useCasesData[activeTab];
 
   return (
-    <section id="como-ayuda" className="py-20 bg-slate-50 border-y border-slate-100 relative overflow-hidden">
+    <section id="como-ayuda" className="py-14 bg-slate-50 border-y border-slate-100 relative overflow-hidden scroll-mt-24">
       
       {/* Soft circular background decoration */}
       <div className="absolute top-0 right-0 w-[450px] h-[450px] bg-blue-100/30 rounded-full blur-3xl opacity-60 pointer-events-none"></div>
@@ -155,7 +158,7 @@ export default function HowItWorks() {
             ¿Qué hace exactamente la Inteligencia Artificial por vos?
           </h2>
           <p className="font-sans text-sm sm:text-base text-slate-500 max-w-xl mx-auto leading-relaxed">
-            Explora las diferentes formas en las que automatizamos tus flujos de trabajo administrativos.
+            Explora las diferentes formas en las que automatizamos tus procesos y flujos de trabajo.
           </p>
         </div>
 
@@ -203,59 +206,79 @@ export default function HowItWorks() {
             </div>
           </div>
 
-          {/* Fila Inferior: Copy y Beneficios (Grid 2 columnas) */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch px-4 sm:px-0">
-            
-            {/* Col 1: Tarjeta de Analogía (5/12 cols) */}
-            <div className="lg:col-span-5 bg-white rounded-3xl p-6 border border-slate-100 shadow-sm flex flex-col justify-center">
-              <div className="mb-3">
-                <span className="text-xs bg-blue-50 text-blue-900 px-3 py-1 rounded-full font-bold uppercase tracking-wider">
-                  {currentData.analogyTitle}
-                </span>
-              </div>
-              <p 
-                className="font-sans text-sm md:text-base text-slate-700 leading-relaxed"
-                dangerouslySetInnerHTML={{ __html: currentData.analogyText }}
-              />
+          {/* Fila Inferior: Copy y Beneficios (Sección que ocupa viewport completo y tiene título propio) */}
+          <div 
+            id="facil-aplicacion" 
+            className="border-t border-slate-200/50 pt-16 lg:pt-20 scroll-mt-24 min-h-[90vh] flex flex-col justify-center px-4 sm:px-0"
+          >
+            {/* Título Interactivo */}
+            <div className="text-center mb-12 space-y-2">
+              <span className="text-xs text-blue-600 font-bold uppercase tracking-widest font-display">
+                De la simulación a la realidad
+              </span>
+              <h3 className="font-display font-extrabold text-2xl sm:text-3xl text-slate-800 tracking-tight leading-tight">
+                Cómo se traduce {currentData.translationTitle} en tu día a día
+              </h3>
+              <p className="font-sans text-xs sm:text-sm text-slate-500 max-w-lg mx-auto">
+                Llevamos a la práctica la simulación anterior para mostrarte su impacto real en la operación.
+              </p>
             </div>
 
-            {/* Col 2: Beneficios en grilla 2x2 y tags (7/12 cols) */}
-            <div className="lg:col-span-7 flex flex-col justify-between space-y-6">
+            {/* Grid de Contenido */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
               
-              {/* Grilla 2x2 de beneficios */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                {currentData.benefits.map((benefit, idx) => (
-                  <div key={idx} className="flex gap-3">
-                    {/* Icon */}
-                    <div className="h-6 w-6 rounded-full bg-blue-100 text-blue-800 flex items-center justify-center shrink-0 mt-0.5 border border-blue-200">
-                      <CheckCircle2 className="h-4.5 w-4.5" />
-                    </div>
-
-                    {/* Benefit details */}
-                    <div className="space-y-1">
-                      <h3 className="font-display font-bold text-sm sm:text-base text-slate-800">
-                        {benefit.title}
-                      </h3>
-                      <p className="font-sans text-xs text-slate-600 leading-relaxed">
-                        {benefit.desc}
-                      </p>
-                    </div>
-                  </div>
-                ))}
+              {/* Col 1: Tarjeta de Analogía (5/12 cols) */}
+              <div className="lg:col-span-5 bg-white rounded-3xl p-6 border border-slate-100 shadow-sm flex flex-col justify-center min-h-[280px] lg:min-h-[260px]">
+                <div className="mb-3">
+                  <span className="text-xs bg-blue-50 text-blue-900 px-3 py-1 rounded-full font-bold uppercase tracking-wider">
+                    {currentData.analogyTitle}
+                  </span>
+                </div>
+                <p 
+                  className="font-sans text-sm md:text-base text-slate-700 leading-relaxed"
+                  dangerouslySetInnerHTML={{ __html: currentData.analogyText }}
+                />
               </div>
 
-              {/* Additional badges */}
-              <div className="bg-[#FAF9F5] rounded-2xl p-4.5 border border-[#FAF9F5] text-xs text-slate-600 flex flex-col sm:flex-row sm:items-center gap-3">
-                <p className="font-bold text-slate-800 uppercase tracking-wider shrink-0">
-                  {currentData.additionalBadgeTitle}
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {currentData.additionalBadges.map((badge, bIdx) => (
-                    <span key={bIdx} className="bg-white border border-slate-200 px-2.5 py-1 rounded-lg font-semibold text-[10px]">
-                      {badge}
-                    </span>
+              {/* Col 2: Beneficios en grilla 2x2 y tags (7/12 cols) */}
+              <div className="lg:col-span-7 flex flex-col justify-between space-y-6 min-h-[280px] lg:min-h-[260px]">
+                
+                {/* Grilla 2x2 de beneficios */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  {currentData.benefits.map((benefit, idx) => (
+                    <div key={idx} className="flex gap-3">
+                      {/* Icon */}
+                      <div className="h-6 w-6 rounded-full bg-blue-100 text-blue-800 flex items-center justify-center shrink-0 mt-0.5 border border-blue-200">
+                        <CheckCircle2 className="h-4.5 w-4.5" />
+                      </div>
+
+                      {/* Benefit details */}
+                      <div className="space-y-1">
+                        <h3 className="font-display font-bold text-sm sm:text-base text-slate-800">
+                          {benefit.title}
+                        </h3>
+                        <p className="font-sans text-xs text-slate-600 leading-relaxed">
+                          {benefit.desc}
+                        </p>
+                      </div>
+                    </div>
                   ))}
                 </div>
+
+                {/* Additional badges */}
+                <div className="bg-[#FAF9F5] rounded-2xl p-4.5 border border-[#FAF9F5] text-xs text-slate-600 flex flex-col sm:flex-row sm:items-center gap-3">
+                  <p className="font-bold text-slate-800 uppercase tracking-wider shrink-0">
+                    {currentData.additionalBadgeTitle}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {currentData.additionalBadges.map((badge, bIdx) => (
+                      <span key={bIdx} className="bg-white border border-slate-200 px-2.5 py-1 rounded-lg font-semibold text-[10px]">
+                        {badge}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
               </div>
 
             </div>

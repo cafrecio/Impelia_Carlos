@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, PhoneCall } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import logoImg from '../assets/isologo_impelia.png';
 
 export default function Navbar({ onOpenContact }) {
@@ -19,11 +20,34 @@ export default function Navbar({ onOpenContact }) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = [
-    { name: '¿Te pasa esto?', href: '#sintomas' },
-    { name: 'Cómo te ayudamos', href: '#como-ayuda' },
-    { name: 'Prueba Gratis', href: '#piloto' }
-  ];
+  const isProductosPage = typeof window !== 'undefined' && window.location.pathname.includes('/productos');
+  const isPilotoPage = typeof window !== 'undefined' && window.location.pathname.includes('/piloto');
+  const isSubPage = isProductosPage || isPilotoPage;
+
+  // Dynamically select nav links based on current path
+  let navLinks = [];
+  if (isPilotoPage) {
+    navLinks = [
+      { name: 'Cómo funciona', href: '#como-funciona' },
+      { name: 'Qué automatizar', href: '#que-automatizar' },
+      { name: 'Costos', href: '#costos' },
+      { name: 'FAQ', href: '#preguntas-piloto' }
+    ];
+  } else if (isProductosPage) {
+    navLinks = [
+      { name: 'Soluciones', href: '#soluciones' },
+      { name: 'Cómo funciona', href: '#como-ayuda' },
+      { name: 'Piloto', href: '#piloto' },
+      { name: 'FAQ', href: '#faq' }
+    ];
+  } else {
+    navLinks = [
+      { name: '¿Te pasa esto?', href: '#sintomas' },
+      { name: 'Cómo te ayudamos', href: '#como-ayuda' },
+      { name: 'Resultados', href: '#resultados' },
+      { name: 'Nuestro equipo', href: '#quienes-somos' }
+    ];
+  }
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
@@ -35,15 +59,25 @@ export default function Navbar({ onOpenContact }) {
         <div className="flex items-center justify-between">
           
           {/* Logo (Izquierda) */}
-          <a href="#" className="flex items-center group">
-            <img 
-              src={logoImg} 
-              alt="Impelia" 
-              className="h-7 sm:h-8 w-auto object-contain transition-transform group-hover:scale-[1.02] duration-300"
-            />
-          </a>
+          {isSubPage ? (
+            <Link to="/" className="flex items-center group">
+              <img 
+                src={logoImg} 
+                alt="Impelia" 
+                className="h-7 sm:h-8 w-auto object-contain transition-transform group-hover:scale-[1.02] duration-300"
+              />
+            </Link>
+          ) : (
+            <a href="#" className="flex items-center group">
+              <img 
+                src={logoImg} 
+                alt="Impelia" 
+                className="h-7 sm:h-8 w-auto object-contain transition-transform group-hover:scale-[1.02] duration-300"
+              />
+            </a>
+          )}
 
-          {/* Links (Centro - oculto en móvil) */}
+          {/* Links (Centro) */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <a
@@ -56,20 +90,30 @@ export default function Navbar({ onOpenContact }) {
             ))}
           </div>
 
-          {/* CTA (Derecha - solo visible en escritorio) */}
+          {/* CTA (Derecha - visible en desktop, y también en mobile si es subpágina sin menú) */}
           <div className="hidden md:flex items-center">
-            <a
-              href="https://wa.me/5491131155986?text=Hola!%20Quiero%20postular%20mi%20empresa%20a%20la%20Prueba%20Gratis%20de%2030%20d%C3%ADas."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-blue-900 hover:bg-blue-800 text-white font-semibold px-5 py-2.5 rounded-xl text-sm transition-all duration-200 hover:shadow-md cursor-pointer flex items-center gap-2"
-            >
-              <PhoneCall className="h-3.5 w-3.5 animate-pulse" />
-              <span>Prueba Gratis</span>
-            </a>
+            {isPilotoPage ? (
+              <a
+                href="https://wa.me/5491131155986?text=¡Hola!%20Quiero%20postular%20mi%20empresa%20a%20la%20Prueba%20Gratis%20de%2030%20días."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-blue-900 hover:bg-blue-800 text-white font-semibold px-5 py-2.5 rounded-xl text-sm transition-all duration-200 hover:shadow-md cursor-pointer flex items-center gap-2"
+              >
+                <PhoneCall className="h-3.5 w-3.5 animate-pulse" />
+                <span>Postular mi empresa</span>
+              </a>
+            ) : (
+              <Link
+                to="/piloto"
+                className="bg-blue-900 hover:bg-blue-800 text-white font-semibold px-5 py-2.5 rounded-xl text-sm transition-all duration-200 hover:shadow-md cursor-pointer flex items-center gap-2"
+              >
+                <PhoneCall className="h-3.5 w-3.5 animate-pulse" />
+                <span>Hacelo real sin costo</span>
+              </Link>
+            )}
           </div>
 
-          {/* Botón menú móvil */}
+          {/* Botón menú móvil (Visible en todos los dispositivos) */}
           <div className="flex md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -98,16 +142,27 @@ export default function Navbar({ onOpenContact }) {
             </a>
           ))}
           <div className="pt-2 px-4">
-            <a
-              href="https://wa.me/5491131155986?text=Hola!%20Quiero%20postular%20mi%20empresa%20a%20la%20Prueba%20Gratis%20de%2030%20d%C3%ADas."
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setIsOpen(false)}
-              className="w-full bg-blue-900 hover:bg-blue-800 text-white font-semibold py-3 px-5 rounded-xl text-center text-sm transition-all shadow-md cursor-pointer flex items-center justify-center gap-2"
-            >
-              <PhoneCall className="h-4 w-4 animate-pulse" />
-              <span>Prueba Gratis</span>
-            </a>
+            {isPilotoPage ? (
+              <a
+                href="https://wa.me/5491131155986?text=¡Hola!%20Quiero%20postular%20mi%20empresa%20a%20la%20Prueba%20Gratis%20de%2030%20días."
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setIsOpen(false)}
+                className="w-full bg-blue-900 hover:bg-blue-800 text-white font-semibold py-3 px-5 rounded-xl text-center text-sm transition-all shadow-md cursor-pointer flex items-center justify-center gap-2"
+              >
+                <PhoneCall className="h-4 w-4 animate-pulse" />
+                <span>Postular mi empresa</span>
+              </a>
+            ) : (
+              <Link
+                to="/piloto"
+                onClick={() => setIsOpen(false)}
+                className="w-full bg-blue-900 hover:bg-blue-800 text-white font-semibold py-3 px-5 rounded-xl text-center text-sm transition-all shadow-md cursor-pointer flex items-center justify-center gap-2"
+              >
+                <PhoneCall className="h-4 w-4 animate-pulse" />
+                <span>Hacelo real sin costo</span>
+              </Link>
+            )}
           </div>
         </div>
       </div>

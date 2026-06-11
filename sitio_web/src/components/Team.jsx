@@ -6,27 +6,27 @@ import marcosImg from '../assets/marcos_300.jpg';
 export default function Team() {
   const members = [
     {
-      name: 'Lic. Carlos Bonifacio',
+      name: 'Carlos Bonifacio',
       role: 'Gestión y relación con clientes',
       image: carlosImg,
-      bio: 'Viene del área de gestión de compras y negociación. Es quien acompaña el relevamiento inicial, entiende las necesidades del negocio y actúa como nexo entre el cliente y el equipo técnico.\n\nSu rol es clave para traducir problemas operativos en soluciones concretas, claras y aplicables.'
+      bio: 'Su experiencia de más de 20 años en empresas nacionales y multinacionales de sectores como minería, metalurgia e industria naval, sumada a su formación en Administración de Empresas y Sistemas, le permiten comprender a fondo las necesidades de tu negocio, aportar ideas estratégicas y diseñar proyectos de transformación a largo plazo.\n\nSu rol es clave como nexo para que tus ideas y proyectos se traduzcan en soluciones concretas, claras y aplicables, con el objetivo de obtener lo mejor de tu empresa y de Impelia.'
     },
     {
-      name: 'Lic. Marcos Florentín',
+      name: 'Marcos Florentín',
       role: 'Desarrollo fullstack y arquitectura técnica',
       image: marcosImg,
-      bio: 'Desarrollador fullstack .NET senior, con más de 15 años de experiencia en proyectos de software para empresas y consultoras internacionales.\n\nAporta solidez técnica, criterio de arquitectura e integración de sistemas, asegurando que cada solución no sea solo una buena idea, sino una herramienta estable, escalable y bien construida.'
+      bio: 'Desarrollador Fullstack .NET Senior con más de 15 años de trayectoria diseñando arquitectura de software y liderando proyectos de desarrollo para corporaciones multinacionales y consultoras globales de primer nivel.\n\nSu experiencia técnica abarca el diseño y optimización de bases de datos relacionales, la construcción de APIs seguras y la migración de sistemas a la nube, garantizando que cada desarrollo de Impelia sea una solución robusta, escalable, libre de errores y completamente alineada a los estándares internacionales de seguridad de la información.'
     },
     {
-      name: 'Lic. Facundo Methol',
+      name: 'Facundo Methol',
       role: 'Automatización e IA aplicada',
       image: facundoImg,
-      bio: 'Desarrollador independiente con experiencia real aplicando IA, bots, sistemas de gestión, reservas online, análisis de datos y automatización de procesos en empresas en funcionamiento.\n\nSu foco está en convertir tareas repetitivas, consultas, planillas y flujos desordenados en soluciones prácticas conectadas a la operación diaria.'
+      bio: 'Especialista en Automatización de Procesos e Inteligencia Artificial aplicada a la operación diaria de empresas de servicios e industriales, con amplia trayectoria en la implementación práctica de agentes de IA, automatización de flujos de trabajo e integraciones de API.\n\nSe enfoca en transformar planillas de Excel lentas, tareas administrativas manuales y cuellos de botella en herramientas automáticas de alto rendimiento que no requieren que aprendas a usar nuevos sistemas, logrando liberar horas de trabajo operativo para tu equipo desde la primera semana.'
     }
   ];
 
   return (
-    <section id="quienes-somos" className="py-20 bg-slate-50/40 relative border-b border-slate-100">
+    <section id="quienes-somos" className="py-20 bg-slate-50/40 relative border-b border-slate-100 scroll-mt-24">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header & Intro */}
@@ -34,22 +34,22 @@ export default function Team() {
           <div className="lg:col-span-5 space-y-6">
             <div className="space-y-4">
               <h2 className="text-sm font-semibold tracking-wider text-indigo-600 uppercase">
-                Quiénes somos
+                Nuestro equipo
               </h2>
               <h3 className="font-display font-extrabold text-3xl sm:text-4xl text-slate-900 tracking-tight leading-tight">
-                Un equipo técnico,<br />con mirada de negocio.
+                Un equipo técnico<br />con mentalidad de negocio.
               </h3>
             </div>
             <p className="text-sm sm:text-base text-slate-500 border-l-2 border-indigo-500 pl-4 italic">
-              Somos tres profesionales formados en Análisis de Sistemas y Gestión de Tecnología, con perfiles complementarios: gestión y vínculo con clientes, IA aplicada a procesos reales, y desarrollo fullstack con experiencia en proyectos internacionales.
+              Somos un grupo de profesionales formados en Gestión de Tecnología, con amplia experiencia y formación complementaria en industrias diversas. Esto nos permite brindar soluciones en las distintas áreas de tu empresa, transformando tu tecnología actual en un activo que multiplica la productividad de todo tu equipo.
             </p>
           </div>
           <div className="lg:col-span-7 space-y-6 text-slate-600 font-sans text-base sm:text-lg leading-relaxed">
             <p className="font-medium text-slate-800">
-              En Impelia combinamos experiencia en desarrollo de sistemas, gestión tecnológica, automatización e implementación real de soluciones en empresas.
+              No te vendemos la Inteligencia Artificial como una moda ni como una fórmula mágica. Nuestro trabajo se centra en colaborar con vos y tu equipo para entender la dinámica de tus procesos y potenciar sus fortalezas, diseñando herramientas que liberen tiempo, mejoren la información actual, aporten datos críticos para decidir, reestructuren flujos de trabajo o den un mejor soporte a tus clientes.
             </p>
             <p>
-              No venimos a vender inteligencia artificial como una moda. Venimos a entender cómo trabaja tu empresa hoy, detectar tareas repetitivas o desordenadas, y construir herramientas concretas que ayuden a vender mejor, responder más rápido, ordenar información y tomar mejores decisiones.
+              Como especialistas en sistemas con trayectoria en empresas de producción, servicios y tecnología, te ayudamos a implementar la IA justa para que tu equipo recupere el tiempo necesario para llevar el negocio al siguiente nivel.
             </p>
           </div>
         </div>

@@ -94,7 +94,7 @@ export default function ERPSimulator({ onComplete }) {
     <div className="w-full space-y-4 animate-in fade-in duration-700">
       
       {/* Slack/Teams Mock Desktop Container */}
-      <div className="bg-[#1E1F22] rounded-3xl overflow-hidden border border-slate-800 shadow-2xl flex flex-col md:flex-row h-[650px]">
+      <div className="bg-[#1E1F22] rounded-3xl overflow-hidden border border-slate-800 shadow-2xl flex flex-col md:flex-row h-[580px] md:h-[480px]">
         
         {/* Dark Sidebar (Slack Workspace list) */}
         <div className="w-full md:w-56 bg-[#1A1B1E] p-4 flex flex-col justify-between border-b md:border-b-0 md:border-r border-[#2B2D31] shrink-0">

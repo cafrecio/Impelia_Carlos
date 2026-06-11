@@ -1,11 +1,10 @@
-name: Deploy sitio_web a GitHub Pages
+name: Deploy sitio_web
 
 on:
   push:
     branches: [main]
     paths:
       - 'sitio_web/**'
-
   workflow_dispatch:
 
 permissions:
@@ -14,12 +13,13 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
+  group: deploy
   cancel-in-progress: true
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
 
@@ -33,20 +33,51 @@ jobs:
         run: npm ci
         working-directory: sitio_web
 
-      - name: Build
+      - name: Build para Ferozo
         run: npm run build
         working-directory: sitio_web
+        env:
+          VITE_BASE_PATH: /
 
-      - uses: actions/upload-pages-artifact@v3
+      # --- DEPLOY TO FEROZO (FTP) ---
+      - name: Instalar lftp
+        run: sudo apt-get install -y lftp
+
+      - name: Deploy por FTPS (Ferozo)
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USER: ${{ secrets.FTP_USERNAME }}
+          FTP_PASS: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          lftp -c "
+            set ftp:ssl-force true;
+            set ftp:ssl-protect-data true;
+            set ssl:verify-certificate no;
+            set ftp:passive-mode on;
+            open -u '$FTP_USER','$FTP_PASS' '$FTP_SERVER';
+            mirror -R --verbose sitio_web/dist/ /;
+            quit
+          "
+
+      - name: Build para GitHub Pages
+        run: npm run build
+        working-directory: sitio_web
+        env:
+          VITE_BASE_PATH: /impulso-ia/
+
+      # --- DEPLOY TO GITHUB PAGES ---
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v3
         with:
           path: sitio_web/dist
 
-  deploy:
-    needs: build
+  deploy-pages:
+    needs: build-and-deploy
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - uses: actions/deploy-pages@v4
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
         id: deployment
