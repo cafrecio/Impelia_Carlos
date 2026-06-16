@@ -114,31 +114,29 @@ export default function PilotoPage() {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-blue-500/10 rounded-full blur-[120px] pointer-events-none" />
           
           <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6 md:space-y-8">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-300 text-xs font-bold uppercase tracking-widest">
-              <Sparkles className="h-3 w-3 animate-pulse" /> Promoción Exclusiva Pymes
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-300 text-xs font-bold tracking-widest">
+              <Sparkles className="h-3 w-3 animate-pulse" /> Promoción exclusiva para PyMes
             </div>
             
             <h1 className="font-display font-extrabold text-4xl sm:text-5xl md:text-6xl text-white leading-tight tracking-tight">
-              Automatizamos tu proceso crítico.<br />
+              Automatizamos<br />
               <span className="bg-gradient-to-r from-blue-400 via-indigo-300 to-purple-400 bg-clip-text text-transparent">
-                Costo de desarrollo: $0.
+                cualquiera de tus procesos
               </span>
             </h1>
             
             <p className="font-sans text-base sm:text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed">
-              Elegimos el principal dolor de cabeza de tu negocio (carga manual, WhatsApp colapsado, planillas cruzadas) y programamos tu automatización sin cargo. La usás por 30 días y después decidís.
+              Elegimos con vos un plan de implementación y empezamos por el más factible. Desarrollamos una solución a medida de tu empresa, la implementamos durante 30 días pagando solo los consumos que hagas, si te gusta seguimos juntos.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-2">
-              <a
-                href={whatsappLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2.5 bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 px-8 rounded-xl transition-all hover:scale-[1.02] text-sm sm:text-base shadow-lg shadow-blue-500/20"
+              <button
+                onClick={openContact}
+                className="inline-flex items-center justify-center gap-2.5 bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 px-8 rounded-xl transition-all hover:scale-[1.02] text-sm sm:text-base shadow-lg shadow-blue-500/20 cursor-pointer animate-fade-in"
               >
                 <MessageCircle className="h-5 w-5 animate-pulse" />
-                Postular mi empresa por WhatsApp
-              </a>
+                Postular mi empresa
+              </button>
             </div>
             
             {/* Urgent Badge */}
@@ -374,15 +372,13 @@ export default function PilotoPage() {
               No dejes pasar los cupos disponibles de este mes. Agendá la llamada diagnóstico por WhatsApp y probá la automatización sin riesgo técnico.
             </p>
             <div className="pt-2">
-              <a
-                href={whatsappLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2.5 bg-blue-600 hover:bg-blue-500 text-white font-bold py-4.5 px-10 rounded-2xl transition-all hover:scale-[1.02] text-sm sm:text-base shadow-lg shadow-blue-500/20"
+              <button
+                onClick={openContact}
+                className="inline-flex items-center justify-center gap-2.5 bg-blue-600 hover:bg-blue-500 text-white font-bold py-4.5 px-10 rounded-2xl transition-all hover:scale-[1.02] text-sm sm:text-base shadow-lg shadow-blue-500/20 cursor-pointer"
               >
                 <MessageCircle className="h-5 w-5 animate-pulse" />
-                Postularme al Plan Piloto Gratis
-              </a>
+                Postular mi empresa
+              </button>
             </div>
           </div>
         </section>
