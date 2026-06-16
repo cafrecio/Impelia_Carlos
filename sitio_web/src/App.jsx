@@ -26,7 +26,7 @@ function HomePage() {
   const closeContact = () => setIsContactOpen(false);
 
   return (
-    <div className="min-h-screen flex flex-col font-sans antialiased text-slate-800 bg-[#FAFAFA]">
+    <div className={`min-h-screen flex flex-col font-sans antialiased text-slate-800 bg-[#FAFAFA] transition-all duration-300 ease-in-out ${isChatOpen ? 'md:mr-[33.333%]' : ''}`}>
 
       <Navbar onOpenContact={openContact} />
 
