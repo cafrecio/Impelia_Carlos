@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import {
   Sparkles, Send, RotateCcw, Mic, FileText, Database, MessageCircle,
   ClipboardList, Eye, Users, BadgeDollarSign, ArrowRight, Check,
-  TrendingUp, ShieldCheck, Quote, LayoutTemplate
+  TrendingUp, ShieldCheck, Quote, LayoutTemplate, X
 } from 'lucide-react';
 import logoImg from '../assets/isologo_impelia.png';
 import carlosImg from '../assets/carlos_300.jpg';
@@ -464,7 +464,7 @@ const SCRIPT = {
 
 let msgId = 0;
 
-export default function ConversacionPage() {
+export default function ConversacionPage({ onClose } = {}) {
   const [thread, setThread] = useState([]);
   const [options, setOptions] = useState([]);
   const [typing, setTyping] = useState(false);
@@ -509,7 +509,7 @@ export default function ConversacionPage() {
     aliveRef.current = true;
     if (!bootedRef.current) {
       bootedRef.current = true;
-      document.title = 'Impelia — Hablá con nuestra IA';
+      if (!onClose) document.title = 'Impelia — Hablá con nuestra IA';
       playNode('start');
     }
     return () => { aliveRef.current = false; };
@@ -590,7 +590,7 @@ export default function ConversacionPage() {
   };
 
   return (
-    <div className="h-dvh flex flex-col bg-[#060A14] text-slate-200 font-sans antialiased overflow-hidden">
+    <div className={`${onClose ? 'h-full' : 'h-dvh'} flex flex-col bg-[#060A14] text-slate-200 font-sans antialiased overflow-hidden`}>
       {/* Scoped animations */}
       <style>{`
         @keyframes ia-pop { from { opacity: 0; transform: translateY(10px) scale(.98); } to { opacity: 1; transform: none; } }
@@ -630,13 +630,24 @@ export default function ConversacionPage() {
             >
               <RotateCcw className="h-4.5 w-4.5" />
             </button>
-            <Link
-              to="/"
-              className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-400 hover:text-white border border-slate-700/70 hover:border-slate-500 rounded-xl px-3 py-2 transition-colors duration-200 cursor-pointer"
-            >
-              <LayoutTemplate className="h-3.5 w-3.5" />
-              <span className="hidden sm:inline">Sitio clásico</span>
-            </Link>
+            {onClose ? (
+              <button
+                onClick={onClose}
+                className="p-2 rounded-xl text-slate-500 hover:text-white hover:bg-slate-800/60 transition-colors duration-200 cursor-pointer"
+                aria-label="Cerrar chat"
+                title="Cerrar"
+              >
+                <X className="h-4.5 w-4.5" />
+              </button>
+            ) : (
+              <Link
+                to="/"
+                className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-400 hover:text-white border border-slate-700/70 hover:border-slate-500 rounded-xl px-3 py-2 transition-colors duration-200 cursor-pointer"
+              >
+                <LayoutTemplate className="h-3.5 w-3.5" />
+                <span className="hidden sm:inline">Sitio clásico</span>
+              </Link>
+            )}
             <img src={logoImg} alt="Impelia" className="h-6 w-auto object-contain hidden sm:block" />
           </div>
         </div>

@@ -93,15 +93,13 @@ export default function Navbar({ onOpenContact }) {
           {/* CTA (Derecha - visible en desktop, y también en mobile si es subpágina sin menú) */}
           <div className="hidden md:flex items-center">
             {isPilotoPage ? (
-              <a
-                href="https://wa.me/5491131155986?text=¡Hola!%20Quiero%20postular%20mi%20empresa%20a%20la%20Prueba%20Gratis%20de%2030%20días."
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={onOpenContact}
                 className="bg-blue-900 hover:bg-blue-800 text-white font-semibold px-5 py-2.5 rounded-xl text-sm transition-all duration-200 hover:shadow-md cursor-pointer flex items-center gap-2"
               >
                 <PhoneCall className="h-3.5 w-3.5 animate-pulse" />
                 <span>Postular mi empresa</span>
-              </a>
+              </button>
             ) : (
               <Link
                 to="/piloto"
@@ -143,16 +141,16 @@ export default function Navbar({ onOpenContact }) {
           ))}
           <div className="pt-2 px-4">
             {isPilotoPage ? (
-              <a
-                href="https://wa.me/5491131155986?text=¡Hola!%20Quiero%20postular%20mi%20empresa%20a%20la%20Prueba%20Gratis%20de%2030%20días."
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => setIsOpen(false)}
+              <button
+                onClick={() => {
+                  setIsOpen(false);
+                  onOpenContact();
+                }}
                 className="w-full bg-blue-900 hover:bg-blue-800 text-white font-semibold py-3 px-5 rounded-xl text-center text-sm transition-all shadow-md cursor-pointer flex items-center justify-center gap-2"
               >
                 <PhoneCall className="h-4 w-4 animate-pulse" />
                 <span>Postular mi empresa</span>
-              </a>
+              </button>
             ) : (
               <Link
                 to="/piloto"
