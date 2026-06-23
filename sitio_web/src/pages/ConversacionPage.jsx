@@ -15,7 +15,7 @@ const waLink = (text) => `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(t
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 // API del bot real (el mismo que atiende el WhatsApp de Impelia)
-const BOT_API = import.meta.env.VITE_BOT_API_URL || 'https://estrellatest.online/api';
+const BOT_API = import.meta.env.VITE_BOT_API_URL || 'https://impelia.online/api';
 
 function getSessionId() {
   let id = sessionStorage.getItem('impelia-chat-session');
