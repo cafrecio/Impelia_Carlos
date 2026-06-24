@@ -486,6 +486,21 @@ export default function ConversacionPage({ onClose, startNode = 'start' } = {}) 
   const runIdRef = useRef(0);
   const endRef = useRef(null);
 
+  // --- Grabación de audio (estilo WhatsApp) ---
+  const [recording, setRecording] = useState(false);
+  const [recSecs, setRecSecs] = useState(0);
+  const mediaRecorderRef = useRef(null);
+  const audioChunksRef = useRef([]);
+  const streamRef = useRef(null);
+  const recTimerRef = useRef(null);
+  const recSecsRef = useRef(0);
+  const cancelRef = useRef(false);
+  const canRecord =
+    typeof MediaRecorder !== 'undefined' &&
+    typeof navigator !== 'undefined' &&
+    !!navigator.mediaDevices?.getUserMedia;
+  const fmtDur = (s) => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`;
+
   const context = () => topicsRef.current.join(', ');
 
   const playNode = useCallback(async (nodeId) => {
@@ -521,7 +536,11 @@ export default function ConversacionPage({ onClose, startNode = 'start' } = {}) 
       if (!onClose) document.title = 'Impelia — Hablá con nuestra IA';
       playNode(startNode);
     }
-    return () => { aliveRef.current = false; };
+    return () => {
+      aliveRef.current = false;
+      if (recTimerRef.current) clearInterval(recTimerRef.current);
+      streamRef.current?.getTracks().forEach((tr) => tr.stop());
+    };
   }, [playNode]);
 
   useEffect(() => {
@@ -598,6 +617,98 @@ export default function ConversacionPage({ onClose, startNode = 'start' } = {}) 
     }
   };
 
+  const stopStream = () => {
+    streamRef.current?.getTracks().forEach((tr) => tr.stop());
+    streamRef.current = null;
+  };
+
+  const sendAudio = async (blob, ext, seconds) => {
+    runIdRef.current++; // cancela cualquier nodo guiado en curso
+    setThread((t) => [...t, { id: ++msgId, role: 'user', audio: true, dur: fmtDur(seconds) }]);
+    transcriptRef.current.push({ role: 'user', message: '[Envió un mensaje de audio]' });
+    setOptions([]);
+    setTyping(true);
+
+    try {
+      const form = new FormData();
+      form.append('session_id', getSessionId());
+      form.append('audio', blob, `audio.${ext}`);
+      transcriptRef.current.slice(-40).forEach((item, i) => {
+        form.append(`history[${i}][role]`, item.role);
+        form.append(`history[${i}][message]`, item.message);
+      });
+      // Sin Content-Type manual: fetch arma el boundary del multipart solo
+      const res = await fetch(`${BOT_API}/web-chat`, { method: 'POST', body: form });
+      const data = await res.json();
+      if (!aliveRef.current) return;
+      if (!res.ok || !data.ok || !data.reply) throw new Error('bot unavailable');
+
+      transcriptRef.current = []; // el bot ya persistió el historial en su sesión
+      setTyping(false);
+      setThread((t) => [...t, { id: ++msgId, role: 'ai', text: data.reply }]);
+      setOptions([
+        { label: 'Ver una demo en vivo', icon: Sparkles, next: 'elegir_demo' },
+        { label: 'Plan Piloto $0', icon: BadgeDollarSign, next: 'costos' },
+        { label: 'Seguir por WhatsApp', icon: MessageCircle, wa: 'Quiero seguir la conversación por acá.' },
+      ]);
+    } catch {
+      if (!aliveRef.current) return;
+      setTyping(false);
+      setThread((t) => [...t, { id: ++msgId, role: 'ai', text: 'Uy, no pude procesar el audio en este momento. ¿Probás de nuevo o me lo escribís?' }]);
+      setOptions([
+        { label: 'Seguir por WhatsApp', icon: MessageCircle, wa: 'Quiero seguir la conversación por acá.' },
+        { label: 'Ver una demo en vivo', icon: Sparkles, next: 'elegir_demo' },
+      ]);
+    }
+  };
+
+  const startRecording = async () => {
+    if (recording || typing || !canRecord) return;
+    let stream;
+    try {
+      stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+    } catch {
+      setThread((t) => [...t, { id: ++msgId, role: 'ai', text: 'Necesito permiso para usar el micrófono. Si preferís, escribime tu mensaje acá abajo.' }]);
+      return;
+    }
+    streamRef.current = stream;
+    const mimeType = MediaRecorder.isTypeSupported('audio/webm') ? 'audio/webm' : 'audio/mp4';
+    const rec = new MediaRecorder(stream, { mimeType });
+    mediaRecorderRef.current = rec;
+    audioChunksRef.current = [];
+    cancelRef.current = false;
+
+    rec.ondataavailable = (e) => { if (e.data.size > 0) audioChunksRef.current.push(e.data); };
+    rec.onstop = () => {
+      const seconds = recSecsRef.current;
+      if (recTimerRef.current) { clearInterval(recTimerRef.current); recTimerRef.current = null; }
+      stopStream();
+      setRecording(false);
+      setRecSecs(0);
+      if (cancelRef.current || seconds < 1) return; // cancelado o demasiado corto
+      const ext = mimeType.includes('webm') ? 'webm' : 'mp4';
+      const blob = new Blob(audioChunksRef.current, { type: mimeType });
+      sendAudio(blob, ext, seconds);
+    };
+
+    runIdRef.current++; // corta el recorrido guiado en curso
+    setOptions([]);
+    rec.start();
+    setRecording(true);
+    recSecsRef.current = 0;
+    setRecSecs(0);
+    recTimerRef.current = setInterval(() => {
+      recSecsRef.current += 1;
+      setRecSecs(recSecsRef.current);
+      if (recSecsRef.current >= 120) stopRecording(true); // tope de 2 min
+    }, 1000);
+  };
+
+  const stopRecording = (send) => {
+    cancelRef.current = !send;
+    try { mediaRecorderRef.current?.stop(); } catch { /* noop */ }
+  };
+
   return (
     <div className={`${onClose ? 'h-full' : 'h-dvh'} flex flex-col bg-[#060A14] text-slate-200 font-sans antialiased overflow-hidden`}>
       {/* Scoped animations */}
@@ -670,7 +781,17 @@ export default function ConversacionPage({ onClose, startNode = 'start' } = {}) 
               return (
                 <div key={m.id} className="ia-pop flex justify-end">
                   <div className="bg-gradient-to-br from-[#4B24C4] to-[#3B199E] text-white text-sm sm:text-base rounded-2xl rounded-br-md px-4 py-3 max-w-[85%] sm:max-w-[70%] shadow-lg shadow-purple-950/30">
-                    {m.text}
+                    {m.audio ? (
+                      <span className="flex items-center gap-2.5">
+                        <Mic className="h-4.5 w-4.5 shrink-0" />
+                        <span className="flex items-center gap-[3px]">
+                          {[10, 16, 8, 18, 12, 20, 9, 15, 11, 17, 7, 13].map((h, i) => (
+                            <span key={i} className="w-[3px] rounded-full bg-white/70" style={{ height: h }} />
+                          ))}
+                        </span>
+                        <span className="text-xs font-mono text-white/80 shrink-0">{m.dur}</span>
+                      </span>
+                    ) : m.text}
                   </div>
                 </div>
               );
@@ -735,25 +856,64 @@ export default function ConversacionPage({ onClose, startNode = 'start' } = {}) 
 
       {/* Input bar — anything typed becomes a real WhatsApp handoff */}
       <footer className="relative z-10 shrink-0 border-t border-slate-800/70 bg-[#060A14]/95 backdrop-blur-md">
-        <form onSubmit={sendDraft} className="max-w-3xl mx-auto px-4 py-3 flex items-center gap-2.5">
-          <input
-            type="text"
-            value={draft}
-            onChange={(e) => setDraft(e.target.value)}
-            placeholder="Preguntame lo que quieras sobre Impelia…"
-            aria-label="Escribir mensaje"
-            className="flex-1 bg-[#0D1426] border border-slate-700/70 focus:border-teal-500/60 rounded-2xl px-4 py-3 text-sm text-slate-200 placeholder:text-slate-600 outline-none transition-colors duration-200 min-w-0"
-          />
-          <button
-            type="submit"
-            className="h-11 w-11 rounded-2xl bg-teal-400 hover:bg-teal-300 text-slate-950 flex items-center justify-center transition-colors duration-200 cursor-pointer shrink-0"
-            aria-label="Enviar mensaje por WhatsApp"
-          >
-            <Send className="h-4.5 w-4.5" />
-          </button>
-        </form>
+        {recording ? (
+          <div className="max-w-3xl mx-auto px-4 py-3 flex items-center gap-3">
+            <button
+              type="button"
+              onClick={() => stopRecording(false)}
+              className="p-2 rounded-xl text-slate-400 hover:text-rose-400 hover:bg-slate-800/60 transition-colors duration-200 cursor-pointer shrink-0"
+              aria-label="Cancelar grabación"
+              title="Cancelar"
+            >
+              <X className="h-5 w-5" />
+            </button>
+            <div className="flex-1 flex items-center gap-2 text-sm text-slate-300 min-w-0">
+              <span className="h-2.5 w-2.5 rounded-full bg-rose-500 animate-pulse shrink-0" />
+              <span className="font-mono">{fmtDur(recSecs)}</span>
+              <span className="text-slate-500 text-xs truncate">Grabando… tocá ✓ para enviar</span>
+            </div>
+            <button
+              type="button"
+              onClick={() => stopRecording(true)}
+              className="h-11 w-11 rounded-2xl bg-teal-400 hover:bg-teal-300 text-slate-950 flex items-center justify-center transition-colors duration-200 cursor-pointer shrink-0"
+              aria-label="Enviar audio"
+            >
+              <Send className="h-4.5 w-4.5" />
+            </button>
+          </div>
+        ) : (
+          <form onSubmit={sendDraft} className="max-w-3xl mx-auto px-4 py-3 flex items-center gap-2.5">
+            <input
+              type="text"
+              value={draft}
+              onChange={(e) => setDraft(e.target.value)}
+              placeholder="Preguntame o mandame un audio…"
+              aria-label="Escribir mensaje"
+              className="flex-1 bg-[#0D1426] border border-slate-700/70 focus:border-teal-500/60 rounded-2xl px-4 py-3 text-sm text-slate-200 placeholder:text-slate-600 outline-none transition-colors duration-200 min-w-0"
+            />
+            {draft.trim() || !canRecord ? (
+              <button
+                type="submit"
+                className="h-11 w-11 rounded-2xl bg-teal-400 hover:bg-teal-300 text-slate-950 flex items-center justify-center transition-colors duration-200 cursor-pointer shrink-0"
+                aria-label="Enviar mensaje"
+              >
+                <Send className="h-4.5 w-4.5" />
+              </button>
+            ) : (
+              <button
+                type="button"
+                onClick={startRecording}
+                className="h-11 w-11 rounded-2xl bg-teal-400 hover:bg-teal-300 text-slate-950 flex items-center justify-center transition-colors duration-200 cursor-pointer shrink-0"
+                aria-label="Grabar audio"
+                title="Grabar un audio"
+              >
+                <Mic className="h-4.5 w-4.5" />
+              </button>
+            )}
+          </form>
+        )}
         <p className="max-w-3xl mx-auto px-4 pb-2.5 text-[10px] text-slate-600 text-center sm:text-left">
-          Lo que escribas lo responde nuestra IA real — la misma que atiende el WhatsApp de Impelia.
+          Escribí o mandá un audio — te responde nuestra IA real, la misma que atiende el WhatsApp de Impelia.
         </p>
       </footer>
     </div>
