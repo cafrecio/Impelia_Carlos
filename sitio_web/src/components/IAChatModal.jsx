@@ -22,7 +22,7 @@ export default function IAChatModal({ onClose }) {
         className="fixed top-0 right-0 z-[60] w-full md:w-1/3 h-full flex flex-col overflow-hidden shadow-2xl"
         style={{ animation: 'ia-modal-in 0.3s cubic-bezier(0.16,1,0.3,1) both' }}
       >
-        <ConversacionPage onClose={onClose} />
+        <ConversacionPage onClose={onClose} startNode="start_home" />
       </div>
     </>
   );

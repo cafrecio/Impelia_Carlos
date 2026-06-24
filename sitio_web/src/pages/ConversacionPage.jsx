@@ -345,6 +345,15 @@ const SCRIPT = {
     options: [...DEMO_OPTIONS, { label: 'Solo estoy chusmeando', icon: Eye, next: 'mirando' }],
   },
 
+  // Arranque para el panel del home (1/3): saludo corto, sin el preámbulo
+  // "esto no parece una página web" que choca cuando el sitio está al lado.
+  start_home: {
+    messages: [
+      'Hola 👋 Soy la IA de Impelia. Contame qué te roba más tiempo y te muestro acá mismo qué automatizaría en tu negocio.',
+    ],
+    options: [...DEMO_OPTIONS, { label: 'Solo estoy chusmeando', icon: Eye, next: 'mirando' }],
+  },
+
   mirando: {
     messages: [
       'Perfecto, chusmeá tranquilo 👀',
@@ -464,7 +473,7 @@ const SCRIPT = {
 
 let msgId = 0;
 
-export default function ConversacionPage({ onClose } = {}) {
+export default function ConversacionPage({ onClose, startNode = 'start' } = {}) {
   const [thread, setThread] = useState([]);
   const [options, setOptions] = useState([]);
   const [typing, setTyping] = useState(false);
@@ -510,7 +519,7 @@ export default function ConversacionPage({ onClose } = {}) {
     if (!bootedRef.current) {
       bootedRef.current = true;
       if (!onClose) document.title = 'Impelia — Hablá con nuestra IA';
-      playNode('start');
+      playNode(startNode);
     }
     return () => { aliveRef.current = false; };
   }, [playNode]);
@@ -545,7 +554,7 @@ export default function ConversacionPage({ onClose } = {}) {
     setThread([]);
     setOptions([]);
     setTyping(false);
-    playNode('start');
+    playNode(startNode);
   };
 
   const sendDraft = async (e) => {
