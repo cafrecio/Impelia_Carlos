@@ -10,7 +10,7 @@ import carlosImg from '../assets/carlos_300.jpg';
 import marcosImg from '../assets/marcos_300.jpg';
 import facundoImg from '../assets/facundo_300.jpg';
 
-const WA_NUMBER = '5491131155986';
+const WA_NUMBER = '5491178211671';
 const waLink = (text) => `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 

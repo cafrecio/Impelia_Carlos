@@ -2,7 +2,7 @@ import React from 'react';
 import { ShieldCheck, Check, Sparkles, MessageCircle } from 'lucide-react';
 
 export default function RiskFreePilot() {
-  const WHATSAPP_NUMBER = '5491131155986';
+  const WHATSAPP_NUMBER = '5491178211671';
   const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('¡Hola! Quiero postular mi empresa a la Prueba Gratis de 30 días.')}`;
 
   const steps = [
