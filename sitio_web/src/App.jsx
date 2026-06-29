@@ -7,7 +7,6 @@ import Hero from './components/Hero';
 import PainPoints from './components/PainPoints';
 import HowItWorks from './components/HowItWorks';
 import Testimonials from './components/Testimonials';
-import Team from './components/Team';
 import FAQ from './components/FAQ';
 import FinalCTA from './components/FinalCTA';
 import Footer from './components/Footer';
@@ -17,6 +16,7 @@ import PilotoPage from './pages/PilotoPage';
 import ConversacionPage from './pages/ConversacionPage';
 import ComandoPage from './pages/ComandoPage';
 import PeliculaPage from './pages/PeliculaPage';
+import PromoImpelerPage from './pages/PromoImpelerPage';
 
 function HomePage() {
   const [isContactOpen, setIsContactOpen] = useState(false);
@@ -35,7 +35,6 @@ function HomePage() {
         <PainPoints />
         <HowItWorks />
         <Testimonials onOpenContact={openContact} />
-        <Team />
         <FAQ />
         <FinalCTA onOpenContact={openContact} />
 
@@ -73,6 +72,7 @@ export default function App() {
         <Route path="/ia" element={<ConversacionPage />} />
         <Route path="/comando" element={<ComandoPage />} />
         <Route path="/dia" element={<PeliculaPage />} />
+        <Route path="/promo_impeler" element={<PromoImpelerPage />} />
       </Routes>
     </BrowserRouter>
   );

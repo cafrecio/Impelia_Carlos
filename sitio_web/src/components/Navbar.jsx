@@ -22,11 +22,18 @@ export default function Navbar({ onOpenContact }) {
 
   const isProductosPage = typeof window !== 'undefined' && window.location.pathname.includes('/productos');
   const isPilotoPage = typeof window !== 'undefined' && window.location.pathname.includes('/piloto');
-  const isSubPage = isProductosPage || isPilotoPage;
+  const isPromoPage = typeof window !== 'undefined' && window.location.pathname.includes('/promo_impeler');
+  const isSubPage = isProductosPage || isPilotoPage || isPromoPage;
 
   // Dynamically select nav links based on current path
   let navLinks = [];
-  if (isPilotoPage) {
+  if (isPromoPage) {
+    navLinks = [
+      { name: 'Que es Impeler?', href: '#que-automatizar' },
+      { name: 'Como funciona?', href: '#como-funciona' },
+      { name: 'Costos', href: '#costos' }
+    ];
+  } else if (isPilotoPage) {
     navLinks = [
       { name: 'Cómo funciona', href: '#como-funciona' },
       { name: 'Qué automatizar', href: '#que-automatizar' },
@@ -44,8 +51,7 @@ export default function Navbar({ onOpenContact }) {
     navLinks = [
       { name: '¿Te pasa esto?', href: '#sintomas' },
       { name: 'Cómo te ayudamos', href: '#como-ayuda' },
-      { name: 'Resultados', href: '#resultados' },
-      { name: 'Nuestro equipo', href: '#quienes-somos' }
+      { name: 'Resultados', href: '#resultados' }
     ];
   }
 
@@ -92,7 +98,7 @@ export default function Navbar({ onOpenContact }) {
 
           {/* CTA (Derecha - visible en desktop, y también en mobile si es subpágina sin menú) */}
           <div className="hidden md:flex items-center">
-            {isPilotoPage ? (
+            {isPilotoPage || isPromoPage ? (
               <button
                 onClick={onOpenContact}
                 className="bg-blue-900 hover:bg-blue-800 text-white font-semibold px-5 py-2.5 rounded-xl text-sm transition-all duration-200 hover:shadow-md cursor-pointer flex items-center gap-2"
@@ -140,7 +146,7 @@ export default function Navbar({ onOpenContact }) {
             </a>
           ))}
           <div className="pt-2 px-4">
-            {isPilotoPage ? (
+            {isPilotoPage || isPromoPage ? (
               <button
                 onClick={() => {
                   setIsOpen(false);
