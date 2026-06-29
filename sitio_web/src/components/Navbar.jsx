@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, PhoneCall } from 'lucide-react';
+import { Menu, X, PhoneCall, MessageCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import logoImg from '../assets/isologo_impelia.png';
 
@@ -80,13 +80,20 @@ export default function Navbar({ onOpenContact }) {
             ))}
           </div>
 
-          {/* CTA (Derecha - visible en desktop, y también en mobile si es subpágina sin menú) */}
           <div className="hidden md:flex items-center">
             <button
               onClick={onOpenContact}
-              className="bg-blue-900 hover:bg-blue-800 text-white font-semibold px-5 py-2.5 rounded-xl text-sm transition-all duration-200 hover:shadow-md cursor-pointer flex items-center gap-2"
+              className={`font-semibold px-5 py-2.5 rounded-xl text-sm transition-all duration-200 hover:shadow-md cursor-pointer flex items-center gap-2 ${
+                isPromoPage 
+                  ? 'bg-emerald-600 hover:bg-emerald-500 text-white shadow-lg shadow-emerald-500/10' 
+                  : 'bg-blue-900 hover:bg-blue-800 text-white'
+              }`}
             >
-              <PhoneCall className="h-3.5 w-3.5 animate-pulse" />
+              {isPromoPage ? (
+                <MessageCircle className="h-3.5 w-3.5 animate-pulse" />
+              ) : (
+                <PhoneCall className="h-3.5 w-3.5 animate-pulse" />
+              )}
               <span>{isPromoPage ? 'Postular mi empresa' : 'Hablemos de tu proyecto'}</span>
             </button>
           </div>
@@ -125,9 +132,17 @@ export default function Navbar({ onOpenContact }) {
                 setIsOpen(false);
                 onOpenContact();
               }}
-              className="w-full bg-blue-900 hover:bg-blue-800 text-white font-semibold py-3 px-5 rounded-xl text-center text-sm transition-all shadow-md cursor-pointer flex items-center justify-center gap-2"
+              className={`w-full font-semibold py-3 px-5 rounded-xl text-center text-sm transition-all shadow-md cursor-pointer flex items-center justify-center gap-2 ${
+                isPromoPage 
+                  ? 'bg-emerald-600 hover:bg-emerald-500 text-white shadow-emerald-500/10' 
+                  : 'bg-blue-900 hover:bg-blue-800 text-white'
+              }`}
             >
-              <PhoneCall className="h-4 w-4 animate-pulse" />
+              {isPromoPage ? (
+                <MessageCircle className="h-4 w-4 animate-pulse" />
+              ) : (
+                <PhoneCall className="h-4 w-4 animate-pulse" />
+              )}
               <span>{isPromoPage ? 'Postular mi empresa' : 'Hablemos de tu proyecto'}</span>
             </button>
           </div>
