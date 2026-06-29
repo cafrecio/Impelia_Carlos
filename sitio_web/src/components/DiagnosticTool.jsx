@@ -219,7 +219,7 @@ export default function DiagnosticTool({ onOpenContact }) {
             {/* Action buttons */}
             <div className="pt-4 flex flex-col sm:flex-row gap-3 justify-center items-center">
               <a
-                href="https://wa.me/5491131155986?text=Hola!%20Hice%20el%20diagn%C3%B3stico%20en%20la%20web%20y%20saqu%C3%A9%20un%20puntaje%20alto.%20Quiero%20postular%20mi%20Pyme%20a%20la%20Prueba%20Gratis."
+                href="https://wa.me/5491178211671?text=Hola!%20Hice%20el%20diagn%C3%B3stico%20en%20la%20web%20y%20saqu%C3%A9%20un%20puntaje%20alto.%20Quiero%20postular%20mi%20Pyme%20a%20la%20Prueba%20Gratis."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto inline-flex bg-blue-900 hover:bg-blue-800 text-white font-bold py-3.5 px-6 rounded-xl text-sm transition-all shadow-md hover:shadow-lg items-center justify-center gap-2 cursor-pointer"

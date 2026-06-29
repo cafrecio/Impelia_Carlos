@@ -85,7 +85,7 @@ export default function ContactModal({ isOpen, onClose }) {
   // Generate prefilled WhatsApp link with the structured answers
   const generateWhatsAppLink = () => {
     const baseText = `¡Hola Carlos! Acabo de postular mi empresa en la web de Impelia.\n\n*Detalles de mi postulación*:\n- *Nombre*: ${userData.name}\n- *Empresa*: ${userData.company}\n- *Proceso a automatizar*: ${userData.bottleneck}\n- *Herramientas actuales*: ${userData.tools}\n- *Contacto*: ${userData.phone || 'No especificado'}`;
-    return `https://wa.me/5491131155986?text=${encodeURIComponent(baseText)}`;
+    return `https://wa.me/5491178211671?text=${encodeURIComponent(baseText)}`;
   };
 
   // Quick reply chips helper

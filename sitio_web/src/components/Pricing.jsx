@@ -2,7 +2,7 @@ import React from 'react';
 import { Check, Sparkles, MessageCircle } from 'lucide-react';
 
 export default function Pricing() {
-  const WHATSAPP_NUMBER = '5491131155986';
+  const WHATSAPP_NUMBER = '5491178211671';
 
   const makeWhatsAppLink = (planName) => {
     const text = encodeURIComponent(`¡Hola! Estuve viendo la web y me interesa consultar por el *${planName}* para mi empresa.`);

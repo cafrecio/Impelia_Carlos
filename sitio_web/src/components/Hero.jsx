@@ -43,7 +43,7 @@ export default function Hero({ onOpenContact }) {
             <div className="pt-2 flex flex-col sm:flex-row gap-4 items-stretch sm:items-center">
               {isPilotoPage ? (
                 <a
-                  href="https://wa.me/5491131155986?text=Hola!%20Quiero%20postular%20mi%20empresa%20a%20la%20Prueba%20Gratis%20de%2030%20d%C3%ADas."
+                  href="https://wa.me/5491178211671?text=Hola!%20Quiero%20postular%20mi%20empresa%20a%20la%20Prueba%20Gratis%20de%2030%20d%C3%ADas."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-white hover:bg-slate-100 text-slate-900 font-bold py-4 px-8 rounded-xl text-sm sm:text-base transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-[1.02] cursor-pointer text-center"

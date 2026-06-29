@@ -6,7 +6,7 @@ import {
 } from 'lucide-react';
 import logoImg from '../assets/isologo_impelia.png';
 
-const WA_NUMBER = '5491131155986';
+const WA_NUMBER = '5491178211671';
 const waLink = (text) => `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`;
 
 /* ------------------------------------------------------------------ */
