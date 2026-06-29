@@ -12,8 +12,6 @@ import FAQ from './components/FAQ';
 import FinalCTA from './components/FinalCTA';
 import Footer from './components/Footer';
 import ContactModal from './components/ContactModal';
-import ProductosPage from './pages/ProductosPage';
-import PilotoPage from './pages/PilotoPage';
 import ConversacionPage from './pages/ConversacionPage';
 import ComandoPage from './pages/ComandoPage';
 import PeliculaPage from './pages/PeliculaPage';
@@ -69,8 +67,6 @@ export default function App() {
       <SocialSidebar />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/productos" element={<ProductosPage />} />
-        <Route path="/piloto" element={<PilotoPage />} />
         <Route path="/ia" element={<ConversacionPage />} />
         <Route path="/comando" element={<ComandoPage />} />
         <Route path="/dia" element={<PeliculaPage />} />

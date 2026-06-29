@@ -20,10 +20,8 @@ export default function Navbar({ onOpenContact }) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const isProductosPage = typeof window !== 'undefined' && window.location.pathname.includes('/productos');
-  const isPilotoPage = typeof window !== 'undefined' && window.location.pathname.includes('/piloto');
   const isPromoPage = typeof window !== 'undefined' && window.location.pathname.includes('/promo_impeler');
-  const isSubPage = isProductosPage || isPilotoPage || isPromoPage;
+  const isSubPage = isPromoPage;
 
   // Dynamically select nav links based on current path
   let navLinks = [];
@@ -32,20 +30,6 @@ export default function Navbar({ onOpenContact }) {
       { name: 'Que es Impeler?', href: '#que-automatizar' },
       { name: 'Como funciona?', href: '#como-funciona' },
       { name: 'Costos', href: '#costos' }
-    ];
-  } else if (isPilotoPage) {
-    navLinks = [
-      { name: 'Cómo funciona', href: '#como-funciona' },
-      { name: 'Qué automatizar', href: '#que-automatizar' },
-      { name: 'Costos', href: '#costos' },
-      { name: 'FAQ', href: '#preguntas-piloto' }
-    ];
-  } else if (isProductosPage) {
-    navLinks = [
-      { name: 'Soluciones', href: '#soluciones' },
-      { name: 'Cómo funciona', href: '#como-ayuda' },
-      { name: 'Piloto', href: '#piloto' },
-      { name: 'FAQ', href: '#faq' }
     ];
   } else {
     navLinks = [
@@ -98,23 +82,13 @@ export default function Navbar({ onOpenContact }) {
 
           {/* CTA (Derecha - visible en desktop, y también en mobile si es subpágina sin menú) */}
           <div className="hidden md:flex items-center">
-            {isPilotoPage || isPromoPage ? (
-              <button
-                onClick={onOpenContact}
-                className="bg-blue-900 hover:bg-blue-800 text-white font-semibold px-5 py-2.5 rounded-xl text-sm transition-all duration-200 hover:shadow-md cursor-pointer flex items-center gap-2"
-              >
-                <PhoneCall className="h-3.5 w-3.5 animate-pulse" />
-                <span>Postular mi empresa</span>
-              </button>
-            ) : (
-              <Link
-                to="/piloto"
-                className="bg-blue-900 hover:bg-blue-800 text-white font-semibold px-5 py-2.5 rounded-xl text-sm transition-all duration-200 hover:shadow-md cursor-pointer flex items-center gap-2"
-              >
-                <PhoneCall className="h-3.5 w-3.5 animate-pulse" />
-                <span>Hacelo real sin costo</span>
-              </Link>
-            )}
+            <button
+              onClick={onOpenContact}
+              className="bg-blue-900 hover:bg-blue-800 text-white font-semibold px-5 py-2.5 rounded-xl text-sm transition-all duration-200 hover:shadow-md cursor-pointer flex items-center gap-2"
+            >
+              <PhoneCall className="h-3.5 w-3.5 animate-pulse" />
+              <span>{isPromoPage ? 'Postular mi empresa' : 'Hablemos de tu proyecto'}</span>
+            </button>
           </div>
 
           {/* Botón menú móvil (Visible en todos los dispositivos) */}
@@ -146,27 +120,16 @@ export default function Navbar({ onOpenContact }) {
             </a>
           ))}
           <div className="pt-2 px-4">
-            {isPilotoPage || isPromoPage ? (
-              <button
-                onClick={() => {
-                  setIsOpen(false);
-                  onOpenContact();
-                }}
-                className="w-full bg-blue-900 hover:bg-blue-800 text-white font-semibold py-3 px-5 rounded-xl text-center text-sm transition-all shadow-md cursor-pointer flex items-center justify-center gap-2"
-              >
-                <PhoneCall className="h-4 w-4 animate-pulse" />
-                <span>Postular mi empresa</span>
-              </button>
-            ) : (
-              <Link
-                to="/piloto"
-                onClick={() => setIsOpen(false)}
-                className="w-full bg-blue-900 hover:bg-blue-800 text-white font-semibold py-3 px-5 rounded-xl text-center text-sm transition-all shadow-md cursor-pointer flex items-center justify-center gap-2"
-              >
-                <PhoneCall className="h-4 w-4 animate-pulse" />
-                <span>Hacelo real sin costo</span>
-              </Link>
-            )}
+            <button
+              onClick={() => {
+                setIsOpen(false);
+                onOpenContact();
+              }}
+              className="w-full bg-blue-900 hover:bg-blue-800 text-white font-semibold py-3 px-5 rounded-xl text-center text-sm transition-all shadow-md cursor-pointer flex items-center justify-center gap-2"
+            >
+              <PhoneCall className="h-4 w-4 animate-pulse" />
+              <span>{isPromoPage ? 'Postular mi empresa' : 'Hablemos de tu proyecto'}</span>
+            </button>
           </div>
         </div>
       </div>
