@@ -54,7 +54,7 @@ export default function Hero({ onOpenContact }) {
 
               <a
                 href="#como-ayuda"
-                className="inline-flex items-center gap-2 text-slate-300 hover:text-white font-semibold py-4 pr-6 text-sm sm:text-base transition-all duration-200 cursor-pointer group self-start"
+                className="inline-flex items-center gap-2 bg-white hover:bg-slate-100 text-slate-900 font-semibold py-4 px-6 rounded-xl text-sm sm:text-base transition-all duration-200 cursor-pointer group self-start"
               >
                 <span>Ver ejemplo en vivo</span>
                 <ArrowRight className="h-4.5 w-4.5 transition-transform duration-200 group-hover:translate-x-1" />

@@ -11,19 +11,15 @@ export default function FAQ() {
     },
     {
       q: '¿Es seguro? ¿Mis datos o los de mis clientes se pueden filtrar?',
-      a: 'La seguridad es prioridad absoluta. Usamos conexiones encriptadas y oficiales. Los agentes de IA solo procesan la información estrictamente autorizada para realizar la tarea específica, sin almacenar ni compartir tus bases de datos con terceros.'
+      a: 'Trabajamos con plataformas y proveedores líderes a nivel mundial que cuentan con altos estándares de seguridad y protección de la información. Cada implementación se diseña para que los agentes de IA accedan únicamente a los datos necesarios para cumplir la tarea para la que fueron autorizados, minimizando el acceso a información sensible.'
     },
     {
       q: '¿Mis empleados se van a resistir a usarlo?',
-      a: 'Al contrario, lo van a amar. Les sacamos de encima el trabajo aburrido, monótono y repetitivo (copiar y pegar datos de correos, cruzar stock a mano, etc.) para que puedan enfocarse en tareas comerciales o de atención al cliente de mayor valor. Además, interactúan con la IA por WhatsApp, que ya todos saben usar sin capacitación.'
-    },
-    {
-      q: '¿Cómo funciona el esquema de costos de un proyecto?',
-      a: 'Nuestro modelo es transparente: cobramos un desarrollo inicial financiado (para relevar, programar y calibrar tu solución a medida) y luego un abono mensual de soporte que cubre la optimización del sistema, más el consumo real de los servidores de IA (que se paga a precio de coste y suele ser de centavos de dólar por cada consulta). Esto te garantiza el retorno de inversión desde el primer mes.'
+      a: 'Nuestra experiencia muestra todo lo contrario. La IA se encarga de las tareas repetitivas, administrativas y de bajo valor (como cargar datos, buscar información, completar formularios o procesar documentos) para que las personas puedan dedicar más tiempo a actividades que requieren criterio, atención al cliente, ventas o toma de decisiones. Además, las soluciones se integran con herramientas que los equipos ya utilizan a diario, por lo que la adopción suele ser rápida y con muy poca capacitación.'
     },
     {
       q: '¿Qué pasa si la IA se equivoca o responde algo mal?',
-      a: 'Nuestros agentes están programados con reglas de negocio estrictas. Si hay un dato dudoso, confuso o incompleto, la IA no inventa: frena la acción y te notifica de inmediato por WhatsApp para que un humano decida. Tenés el control absoluto y la última palabra.'
+      a: 'Los agentes de IA se configuran con reglas de negocio y validaciones específicas para cada proceso. Cuando la información es insuficiente, inconsistente o requiere un criterio humano, el agente puede detener la acción y derivar el caso para su revisión en lugar de asumir o inventar una respuesta. Cada implementación define los niveles de autonomía y validación según las necesidades de la empresa, manteniendo siempre el control en manos de las personas.'
     }
   ];
 
