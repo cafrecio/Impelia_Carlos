@@ -6,6 +6,11 @@
   --font-space: 'Space Grotesk', system-ui, -apple-system, sans-serif;
 
   /* Brand Colors: Primary (#3B199E) & Accent (#09C0A8) */
+  --color-brand: #09c0a8;
+  --color-brand-hover: #08a38f;
+  --color-brand-light: #e6faf6;
+  --color-brand-dark: #056e60;
+
   --color-blue-50: #f5f3ff;
   --color-blue-100: #ebe5ff;
   --color-blue-200: #dcd0ff;

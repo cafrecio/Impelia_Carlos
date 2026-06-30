@@ -53,9 +53,9 @@ export default function PromoImpelerPage() {
         'Extrae el pedido exacto (cantidades, productos, datos)',
         'Carga los datos automáticamente en tu planilla en segundos'
       ],
-      iconBg: 'bg-emerald-100 text-emerald-600',
-      accent: 'from-emerald-500 to-teal-500',
-      bg: 'bg-emerald-50/60'
+      iconBg: 'bg-brand-light text-brand-dark',
+      accent: 'from-brand to-teal-500',
+      bg: 'bg-brand-light/60'
     },
     {
       title: 'Lectura de Facturas y Remitos PDF',
@@ -65,9 +65,9 @@ export default function PromoImpelerPage() {
         'Extrae de forma inteligente montos, CUITs, CBUs e ítems',
         'Exporta los datos estructurados listos para registrar'
       ],
-      iconBg: 'bg-blue-100 text-blue-600',
-      accent: 'from-blue-500 to-indigo-500',
-      bg: 'bg-blue-50/60'
+      iconBg: 'bg-brand-light text-brand-dark',
+      accent: 'from-brand to-teal-500',
+      bg: 'bg-brand-light/60'
     },
     {
       title: 'Asistente de Preguntas Frecuentes (FAQ)',
@@ -77,9 +77,9 @@ export default function PromoImpelerPage() {
         'Responde con precisión humana citando el documento origen',
         'Integrable a un widget en tu web o a tu WhatsApp de atención'
       ],
-      iconBg: 'bg-indigo-100 text-indigo-600',
-      accent: 'from-indigo-500 to-purple-500',
-      bg: 'bg-indigo-50/60'
+      iconBg: 'bg-brand-light text-brand-dark',
+      accent: 'from-brand to-teal-500',
+      bg: 'bg-brand-light/60'
     }
   ];
 
@@ -116,20 +116,20 @@ export default function PromoImpelerPage() {
           {/* Grid pattern */}
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#141B2D_1px,transparent_1px),linear-gradient(to_bottom,#141B2D_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
           
-          {/* Premium blue/cyan ambient glows */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-cyan-500/5 rounded-full blur-[120px] pointer-events-none" />
-          <div className="absolute top-0 right-0 w-[400px] h-[300px] bg-indigo-500/5 rounded-full blur-[100px] pointer-events-none" />
+          {/* Premium brand ambient glows */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-brand/5 rounded-full blur-[120px] pointer-events-none" />
+          <div className="absolute top-0 right-0 w-[400px] h-[300px] bg-brand/5 rounded-full blur-[100px] pointer-events-none" />
           
           <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6 md:space-y-8">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-300 text-xs font-bold tracking-widest">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-brand/30 bg-brand/10 text-brand text-xs font-bold tracking-widest">
               <Sparkles className="h-3 w-3 animate-pulse" /> Convocatoria abierta · Cupos limitados!!
             </div>
             
             {/* H1 */}
             <h1 className="font-display font-extrabold text-4xl sm:text-5xl md:text-6xl text-white leading-tight tracking-tight">
               Buscamos pymes que quieran<br />
-              <span className="bg-gradient-to-r from-cyan-400 via-sky-300 to-indigo-300 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-brand via-[#0cd8bd] to-[#5ff2df] bg-clip-text text-transparent">
                 multiplicar el impacto de su esfuerzo.
               </span>
             </h1>
@@ -141,18 +141,18 @@ export default function PromoImpelerPage() {
 
             {/* Value Cards */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto pt-2">
-              <div className="bg-white/5 backdrop-blur-sm border border-cyan-500/20 rounded-2xl p-5 text-center space-y-2 hover:border-cyan-500/40 transition-colors duration-300">
-                <div className="font-display font-black text-2xl text-cyan-300">100%</div>
+              <div className="bg-white/5 backdrop-blur-sm border border-brand/20 rounded-2xl p-5 text-center space-y-2 hover:border-brand/40 transition-colors duration-300">
+                <div className="font-display font-black text-2xl text-brand">100%</div>
                 <p className="font-display font-bold text-sm text-white">Desarrollo bonificado</p>
                 <p className="text-xs text-slate-400">Asumimos el diseño y la programación a medida.</p>
               </div>
-              <div className="bg-white/5 backdrop-blur-sm border border-cyan-500/20 rounded-2xl p-5 text-center space-y-2 hover:border-cyan-500/40 transition-colors duration-300">
-                <div className="font-display font-black text-2xl text-cyan-300">30 días</div>
+              <div className="bg-white/5 backdrop-blur-sm border border-brand/20 rounded-2xl p-5 text-center space-y-2 hover:border-brand/40 transition-colors duration-300">
+                <div className="font-display font-black text-2xl text-brand">30 días</div>
                 <p className="font-display font-bold text-sm text-white">Prueba real</p>
                 <p className="text-xs text-slate-400">Lo usás en tu día a día con datos reales.</p>
               </div>
-              <div className="bg-white/5 backdrop-blur-sm border border-cyan-500/20 rounded-2xl p-5 text-center space-y-2 hover:border-cyan-500/40 transition-colors duration-300">
-                <div className="font-display font-black text-2xl text-cyan-300">~USD 15</div>
+              <div className="bg-white/5 backdrop-blur-sm border border-brand/20 rounded-2xl p-5 text-center space-y-2 hover:border-brand/40 transition-colors duration-300">
+                <div className="font-display font-black text-2xl text-brand">~USD 15</div>
                 <p className="font-display font-bold text-sm text-white">Costo de servidor</p>
                 <p className="text-xs text-slate-400">Pagás directo tu consumo de servidores de IA.</p>
               </div>
@@ -164,7 +164,7 @@ export default function PromoImpelerPage() {
                 href={whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-4 px-8 rounded-xl transition-all hover:scale-[1.02] text-sm sm:text-base shadow-lg shadow-emerald-500/20 cursor-pointer"
+                className="inline-flex items-center justify-center gap-2.5 bg-brand hover:bg-brand-hover text-white font-bold py-4 px-8 rounded-xl transition-all hover:scale-[1.02] text-sm sm:text-base shadow-lg shadow-brand/20 cursor-pointer"
               >
                 <MessageCircle className="h-5 w-5" />
                 Postular mi empresa
@@ -173,7 +173,7 @@ export default function PromoImpelerPage() {
             
             {/* Dynamic Urgency Badge */}
             <div className="pt-2 text-xs sm:text-sm text-slate-400 font-semibold flex items-center justify-center gap-2">
-              <span className="h-2 w-2 rounded-full bg-emerald-500 animate-ping"></span>
+              <span className="h-2 w-2 rounded-full bg-brand animate-ping"></span>
               {spotsLeft === 1
                 ? 'Cupos limitados: Queda 1 lugar disponible de 5 este mes.'
                 : `Cupos limitados: Quedan ${spotsLeft} lugares disponibles de 5 este mes.`}
@@ -184,7 +184,7 @@ export default function PromoImpelerPage() {
         {/* POR QUÉ LO HACEMOS */}
         <section className="py-20 bg-white border-b border-slate-100">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
-            <div className="mx-auto h-12 w-12 rounded-xl bg-blue-50 text-blue-600 border border-blue-100 flex items-center justify-center shadow-xs">
+            <div className="mx-auto h-12 w-12 rounded-xl bg-brand-light text-brand-dark border border-brand/20 flex items-center justify-center shadow-xs">
               <ShieldCheck className="h-6 w-6" />
             </div>
             <h2 className="font-display font-extrabold text-2xl sm:text-3xl text-slate-900 tracking-tight">
@@ -257,7 +257,7 @@ export default function PromoImpelerPage() {
                     <ul className="space-y-2.5 pt-2">
                       {item.points.map((p, i) => (
                         <li key={i} className="flex items-start gap-2 text-xs sm:text-sm text-slate-700">
-                          <CheckCircle2 className="h-4 w-4 text-slate-400 shrink-0 mt-0.5" />
+                          <CheckCircle2 className="h-4 w-4 text-brand shrink-0 mt-0.5" />
                           {p}
                         </li>
                       ))}
@@ -284,26 +284,26 @@ export default function PromoImpelerPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
               {/* Gratis */}
               <div className="bg-white border border-slate-100 rounded-3xl p-8 space-y-6 shadow-xs relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-24 h-24 bg-blue-50 rounded-full blur-2xl pointer-events-none opacity-60"></div>
+                <div className="absolute top-0 right-0 w-24 h-24 bg-brand-light rounded-full blur-2xl pointer-events-none opacity-60"></div>
                 <div className="space-y-1">
-                  <span className="text-xs font-bold uppercase tracking-widest text-indigo-600 bg-indigo-50 px-2.5 py-1 rounded-md">Nuestro Cargo</span>
+                  <span className="text-xs font-bold uppercase tracking-widest text-brand-dark bg-brand-light px-2.5 py-1 rounded-md">Nuestro Cargo</span>
                   <h3 className="font-display font-extrabold text-2xl text-slate-900 pt-2">$0 Desarrollo</h3>
                 </div>
                 <ul className="space-y-3 text-sm text-slate-600 font-medium">
                   <li className="flex items-center gap-2">
-                    <Check className="h-4.5 w-4.5 text-indigo-500 shrink-0" />
+                    <Check className="h-4.5 w-4.5 text-brand shrink-0" />
                     <span>Llamada de diseño y flujo</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <Check className="h-4.5 w-4.5 text-indigo-500 shrink-0" />
+                    <Check className="h-4.5 w-4.5 text-brand shrink-0" />
                     <span>Programación técnica a medida</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <Check className="h-4.5 w-4.5 text-indigo-500 shrink-0" />
+                    <Check className="h-4.5 w-4.5 text-brand shrink-0" />
                     <span>Integración e infraestructura</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <Check className="h-4.5 w-4.5 text-indigo-500 shrink-0" />
+                    <Check className="h-4.5 w-4.5 text-brand shrink-0" />
                     <span>Soporte prioritario durante la prueba</span>
                   </li>
                 </ul>
@@ -311,24 +311,24 @@ export default function PromoImpelerPage() {
 
               {/* Pagado */}
               <div className="bg-white border border-slate-100 rounded-3xl p-8 space-y-6 shadow-xs relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-24 h-24 bg-emerald-50 rounded-full blur-2xl pointer-events-none opacity-60"></div>
+                <div className="absolute top-0 right-0 w-24 h-24 bg-brand-light rounded-full blur-2xl pointer-events-none opacity-60"></div>
                 <div className="space-y-1">
-                  <span className="text-xs font-bold uppercase tracking-widest text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-md">Tu Cargo</span>
+                  <span className="text-xs font-bold uppercase tracking-widest text-brand-dark bg-brand-light px-2.5 py-1 rounded-md">Tu Cargo</span>
                   <h3 className="font-display font-extrabold text-2xl text-slate-900 pt-2">Costo de Servidor</h3>
                 </div>
                 <p className="font-sans text-xs text-slate-500 leading-relaxed">
                   Para correr la automatización con datos reales se consume el procesador de IA. Pagás el consumo directo a precio de costo.
                 </p>
-                <div className="bg-emerald-50/50 border border-emerald-50 rounded-xl p-3 text-center">
-                  <span className="font-display font-bold text-sm text-emerald-700">Entre USD 5 y USD 20 al mes</span>
+                <div className="bg-brand-light/50 border border-brand-light rounded-xl p-3 text-center">
+                  <span className="font-display font-bold text-sm text-brand-dark">Entre USD 5 y USD 20 al mes</span>
                 </div>
                 <ul className="space-y-3 text-sm text-slate-600 font-medium pt-1">
                   <li className="flex items-center gap-2">
-                    <Check className="h-4.5 w-4.5 text-emerald-500 shrink-0" />
+                    <Check className="h-4.5 w-4.5 text-brand shrink-0" />
                     <span>Pagas solo lo que usás</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <Check className="h-4.5 w-4.5 text-emerald-500 shrink-0" />
+                    <Check className="h-4.5 w-4.5 text-brand shrink-0" />
                     <span>Sin abonos ocultos en el mes 1</span>
                   </li>
                 </ul>
@@ -341,7 +341,7 @@ export default function PromoImpelerPage() {
         <section id="preguntas-piloto" className="py-20 bg-white relative border-b border-slate-100 scroll-mt-24">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center space-y-3 mb-16">
-              <div className="inline-flex p-3 bg-blue-50 text-blue-600 rounded-2xl mb-2">
+              <div className="inline-flex p-3 bg-brand-light text-brand-dark rounded-2xl mb-2">
                 <HelpCircle className="h-6 w-6" />
               </div>
               <h2 className="font-display font-extrabold text-3xl text-slate-900 tracking-tight">
@@ -359,7 +359,7 @@ export default function PromoImpelerPage() {
                   <div
                     key={idx}
                     className={`bg-slate-50 border rounded-3xl overflow-hidden transition-all duration-300 ${
-                      isOpen ? 'border-blue-100 shadow-md bg-white' : 'border-slate-100 hover:border-slate-200'
+                      isOpen ? 'border-brand/30 shadow-md bg-white' : 'border-slate-100 hover:border-slate-200'
                     }`}
                   >
                     <button
@@ -370,7 +370,7 @@ export default function PromoImpelerPage() {
                         {faq.q}
                       </span>
                       <div className={`p-1.5 rounded-full bg-white border border-slate-100 shrink-0 transition-transform duration-300 ${
-                        isOpen ? 'rotate-180 text-blue-600 border-blue-100' : 'text-slate-400'
+                        isOpen ? 'rotate-180 text-brand border-brand/30' : 'text-slate-400'
                       }`}>
                         <ChevronDown className="h-4.5 w-4.5" />
                       </div>
@@ -396,7 +396,7 @@ export default function PromoImpelerPage() {
         <section className="py-24 bg-[#090D1A] text-white relative overflow-hidden">
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#141B2D_1px,transparent_1px),linear-gradient(to_bottom,#141B2D_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-80"></div>
           
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-cyan-500/5 rounded-full blur-[120px] pointer-events-none" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-brand/5 rounded-full blur-[120px] pointer-events-none" />
 
           <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
             <h2 className="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl text-white tracking-tight">
@@ -410,7 +410,7 @@ export default function PromoImpelerPage() {
                 href={whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-4.5 px-10 rounded-2xl transition-all hover:scale-[1.02] text-sm sm:text-base shadow-lg shadow-emerald-500/20 cursor-pointer"
+                className="inline-flex items-center justify-center gap-2.5 bg-brand hover:bg-brand-hover text-white font-bold py-4.5 px-10 rounded-2xl transition-all hover:scale-[1.02] text-sm sm:text-base shadow-lg shadow-brand/20 cursor-pointer"
               >
                 <MessageCircle className="h-5 w-5" />
                 Postular mi empresa

@@ -85,7 +85,7 @@ export default function Navbar({ onOpenContact }) {
               onClick={onOpenContact}
               className={`font-semibold px-5 py-2.5 rounded-xl text-sm transition-all duration-200 hover:shadow-md cursor-pointer flex items-center gap-2 ${
                 isPromoPage 
-                  ? 'bg-emerald-600 hover:bg-emerald-500 text-white shadow-lg shadow-emerald-500/10' 
+                  ? 'bg-brand hover:bg-brand-hover text-white shadow-lg shadow-brand/10' 
                   : 'bg-blue-900 hover:bg-blue-800 text-white'
               }`}
             >
@@ -134,7 +134,7 @@ export default function Navbar({ onOpenContact }) {
               }}
               className={`w-full font-semibold py-3 px-5 rounded-xl text-center text-sm transition-all shadow-md cursor-pointer flex items-center justify-center gap-2 ${
                 isPromoPage 
-                  ? 'bg-emerald-600 hover:bg-emerald-500 text-white shadow-emerald-500/10' 
+                  ? 'bg-brand hover:bg-brand-hover text-white shadow-brand/10' 
                   : 'bg-blue-900 hover:bg-blue-800 text-white'
               }`}
             >
