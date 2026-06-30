@@ -1,5 +1,5 @@
 import React from 'react';
-import { HelpCircle, PhoneCall } from 'lucide-react';
+import { HelpCircle, MessageCircle } from 'lucide-react';
 
 export default function FinalCTA({ onOpenContact }) {
   return (
@@ -38,7 +38,7 @@ export default function FinalCTA({ onOpenContact }) {
             rel="noopener noreferrer"
             className="w-full sm:w-auto inline-flex bg-white hover:bg-slate-100 text-slate-900 font-bold py-4 px-10 rounded-full text-base transition-all duration-200 shadow-md hover:shadow-lg hover:scale-[1.02] items-center justify-center gap-2.5 mx-auto cursor-pointer"
           >
-            <PhoneCall className="h-5 w-5 text-blue-900 animate-pulse" />
+            <MessageCircle className="h-5 w-5 text-[#09c0a8] animate-pulse" />
             <span>Agendar charla gratuita</span>
           </a>
         </div>
