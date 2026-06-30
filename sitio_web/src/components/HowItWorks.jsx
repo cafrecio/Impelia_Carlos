@@ -173,11 +173,11 @@ export default function HowItWorks() {
                 onClick={() => setActiveTab(tab.id)}
                 className={`flex items-center gap-2 px-4.5 py-3 rounded-2xl font-display font-bold text-xs sm:text-sm border transition-all duration-300 cursor-pointer shrink-0 ${
                   isActive
-                    ? 'bg-blue-900 text-white border-blue-900 shadow-md shadow-blue-900/10 hover:scale-[1.01]'
+                    ? 'bg-[#09c0a8] text-white border-[#09c0a8] shadow-md shadow-[#09c0a8]/20 hover:scale-[1.01]'
                     : 'bg-white text-slate-600 border-slate-200 hover:border-slate-350 hover:bg-slate-50 hover:text-slate-800 active:scale-95'
                 }`}
               >
-                <Icon className={`h-4.5 w-4.5 ${isActive ? 'text-blue-200' : 'text-slate-400'}`} />
+                <Icon className={`h-4.5 w-4.5 ${isActive ? 'text-white/80' : 'text-slate-400'}`} />
                 <span className="whitespace-nowrap">{tab.label}</span>
               </button>
             );
@@ -230,7 +230,7 @@ export default function HowItWorks() {
               {/* Col 1: Tarjeta de Analogía (5/12 cols) */}
               <div className="lg:col-span-5 bg-white rounded-3xl p-6 border border-slate-100 shadow-sm flex flex-col justify-center min-h-[280px] lg:min-h-[260px]">
                 <div className="mb-3">
-                  <span className="text-xs bg-blue-50 text-blue-900 px-3 py-1 rounded-full font-bold uppercase tracking-wider">
+                  <span className="text-xs bg-[#09c0a8]/10 text-[#09c0a8] px-3 py-1 rounded-full font-bold uppercase tracking-wider">
                     {currentData.analogyTitle}
                   </span>
                 </div>
@@ -248,7 +248,7 @@ export default function HowItWorks() {
                   {currentData.benefits.map((benefit, idx) => (
                     <div key={idx} className="flex gap-3">
                       {/* Icon */}
-                      <div className="h-6 w-6 rounded-full bg-blue-100 text-blue-800 flex items-center justify-center shrink-0 mt-0.5 border border-blue-200">
+                      <div className="h-6 w-6 rounded-full bg-[#09c0a8]/10 text-[#09c0a8] flex items-center justify-center shrink-0 mt-0.5 border border-[#09c0a8]/20">
                         <CheckCircle2 className="h-4.5 w-4.5" />
                       </div>
 

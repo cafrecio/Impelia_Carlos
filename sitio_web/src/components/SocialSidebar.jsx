@@ -4,7 +4,6 @@ import { SocialIcon } from 'react-social-icons';
 const socials = [
   { url: 'https://www.instagram.com/impelia.ai/', label: 'Instagram' },
   { url: 'https://wa.me/5491178211671',           label: 'WhatsApp' },
-  { url: 'https://linkedin.com/company/impelia',  label: 'LinkedIn' },
 ];
 
 function SocialIconItem({ url, label }) {
