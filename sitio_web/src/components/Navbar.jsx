@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, PhoneCall, MessageCircle } from 'lucide-react';
+import { Menu, X, MessageSquare, MessageCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import logoImg from '../assets/isologo_impelia.png';
 
@@ -84,15 +84,16 @@ export default function Navbar({ onOpenContact }) {
             <button
               onClick={onOpenContact}
               className={`font-semibold px-5 py-2.5 rounded-xl text-sm transition-all duration-200 hover:shadow-md cursor-pointer flex items-center gap-2 ${
-                isPromoPage 
-                  ? 'bg-emerald-600 hover:bg-emerald-500 text-white shadow-lg shadow-emerald-500/10' 
-                  : 'bg-blue-900 hover:bg-blue-800 text-white'
+                isPromoPage
+                  ? 'bg-emerald-600 hover:bg-emerald-500 text-white shadow-lg shadow-emerald-500/10'
+                  : 'text-white'
               }`}
+              style={!isPromoPage ? { backgroundColor: '#09C0A8' } : undefined}
             >
               {isPromoPage ? (
                 <MessageCircle className="h-3.5 w-3.5 animate-pulse" />
               ) : (
-                <PhoneCall className="h-3.5 w-3.5 animate-pulse" />
+                <MessageSquare className="h-3.5 w-3.5" />
               )}
               <span>{isPromoPage ? 'Postular mi empresa' : 'Hablemos de tu proyecto'}</span>
             </button>
@@ -133,15 +134,16 @@ export default function Navbar({ onOpenContact }) {
                 onOpenContact();
               }}
               className={`w-full font-semibold py-3 px-5 rounded-xl text-center text-sm transition-all shadow-md cursor-pointer flex items-center justify-center gap-2 ${
-                isPromoPage 
-                  ? 'bg-emerald-600 hover:bg-emerald-500 text-white shadow-emerald-500/10' 
-                  : 'bg-blue-900 hover:bg-blue-800 text-white'
+                isPromoPage
+                  ? 'bg-emerald-600 hover:bg-emerald-500 text-white shadow-emerald-500/10'
+                  : 'text-white'
               }`}
+              style={!isPromoPage ? { backgroundColor: '#09C0A8' } : undefined}
             >
               {isPromoPage ? (
                 <MessageCircle className="h-4 w-4 animate-pulse" />
               ) : (
-                <PhoneCall className="h-4 w-4 animate-pulse" />
+                <MessageSquare className="h-4 w-4" />
               )}
               <span>{isPromoPage ? 'Postular mi empresa' : 'Hablemos de tu proyecto'}</span>
             </button>
