@@ -216,7 +216,7 @@ export default function PromoImpelerPage() {
                   key={idx}
                   className="bg-white rounded-3xl p-6 border border-slate-100 shadow-xs flex flex-col space-y-4 relative overflow-hidden group hover:shadow-md transition-all duration-300"
                 >
-                  <div className="h-9 w-9 rounded-full bg-blue-900 text-white font-display font-bold text-sm flex items-center justify-center shadow-sm">
+                  <div className="h-9 w-9 rounded-full bg-brand text-white font-display font-bold text-sm flex items-center justify-center shadow-sm">
                     {step.num}
                   </div>
                   <div className="space-y-2">
