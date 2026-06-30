@@ -40,8 +40,8 @@ export default function Hero({ onOpenContact }) {
             </p>
 
             {/* Premium Call to Actions */}
-            <div className="pt-2 flex flex-col sm:flex-row gap-4 items-stretch sm:items-center">
-              {isPilotoPage ? (
+            <div className="pt-2 flex flex-col sm:flex-row gap-4 items-start sm:items-center">
+              {isPilotoPage && (
                 <a
                   href="https://wa.me/5491178211671?text=Hola!%20Quiero%20postular%20mi%20empresa%20a%20la%20Prueba%20Gratis%20de%2030%20d%C3%ADas."
                   target="_blank"
@@ -50,18 +50,11 @@ export default function Hero({ onOpenContact }) {
                 >
                   Quiero mi Prueba Gratis
                 </a>
-              ) : (
-                <button
-                  onClick={onOpenContact}
-                  className="bg-white hover:bg-slate-100 text-slate-900 font-bold py-4 px-8 rounded-xl text-sm sm:text-base transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-[1.02] cursor-pointer text-center"
-                >
-                  Hablemos de tu proyecto
-                </button>
               )}
-              
+
               <a
                 href="#como-ayuda"
-                className="inline-flex items-center justify-center gap-2 text-slate-300 hover:text-white font-semibold py-4 px-6 text-sm sm:text-base transition-all duration-200 cursor-pointer group"
+                className="inline-flex items-center gap-2 text-slate-300 hover:text-white font-semibold py-4 pr-6 text-sm sm:text-base transition-all duration-200 cursor-pointer group self-start"
               >
                 <span>Ver ejemplo en vivo</span>
                 <ArrowRight className="h-4.5 w-4.5 transition-transform duration-200 group-hover:translate-x-1" />
